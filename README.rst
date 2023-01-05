@@ -1,7 +1,7 @@
 .. image:: https://raw.githubusercontent.com/owera/versa-framework/master/assets/repo-banner.svg
    :alt: Versa Framework
 
-.. image:: https://img.shields.io/discord/881118111967883295?color=blue&label=discord
+.. image:: https://img.shields.io/discord/1021941603042074706?color=blue&label=discord
    :target: https://discord.gg/Fee6Kptq57
    :alt: Discord server invite
 .. image:: https://img.shields.io/pypi/v/versa-framework.svg
