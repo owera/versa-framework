@@ -35,15 +35,25 @@ Installing
 
 **Python 3.8 or higher is required**
 
+Install the initial dependeces:
+
+.. code:: sh
+
+    # aiohttp
+    pip install aiohttp==3.8.0
+
+    # typing_extensions
+    pip install typing-extensions==4.2.0
+
 To install the library without full voice support, you can just run the following command:
 
 .. code:: sh
 
     # Linux/macOS
-    python3 -m pip install -U versacord or using .git link repositore
+    python3 -m pip install -U versacord
 
     # Windows
-    py -3 -m pip install -U versacord or using .git link repositore
+    py -3 -m pip install -U versacord
 
 Otherwise to get voice support you should run the following command:
 
@@ -104,9 +114,9 @@ Quick Example
 
     bot.run("token")
 
-You can find more examples in the `examples directory <https://github.com/owera/versa-framework/blob/stable/examples/>`_.
+.. You can find more examples in the `examples directory <https://github.com/owera/versa-framework/blob/stable/examples/>`_.
 
-**NOTE:** It is not advised to leave your token directly in your code, as it allows anyone with it to access your bot. If you intend to make your code public you should `store it securely <https://github.com/nextcord/nextcord/blob/stable/examples/secure_token_storage.py/>`_.
+**NOTE:** It is not advised to leave your token directly in your code, as it allows anyone with it to access your bot. If you intend to make your code public you should store it securely.
 
 Links
 ------
