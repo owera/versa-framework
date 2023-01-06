@@ -12,13 +12,13 @@ with open("alias_license.py") as f:
 
 print(f"Ignoring: {ignores}")
 
-target_folder = Path("versa")
+target_folder = Path("versacord")
 alias_folder = Path("discord")
 
 
 def scan_dir(folder):
     for file in folder.glob("*"):
-        unprefixed = str(file)[len("versa") + 1 :]
+        unprefixed = str(file)[len("versacord") + 1 :]
         should_ignore = False
         for ignore in ignores:
             if ignore.startswith("^"):

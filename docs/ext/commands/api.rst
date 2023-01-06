@@ -1,9 +1,9 @@
-.. currentmodule:: versa
+.. currentmodule:: versacord
 
 API Reference
 =============
 
-The following section outlines the API of versa's command extension module.
+The following section outlines the API of versacord's command extension module.
 
 .. _ext_commands_api_bot:
 
@@ -13,9 +13,9 @@ Bots
 Bot
 ~~~
 
-.. attributetable:: versa.ext.commands.Bot
+.. attributetable:: versacord.ext.commands.Bot
 
-.. autoclass:: versa.ext.commands.Bot
+.. autoclass:: versacord.ext.commands.Bot
     :members:
     :inherited-members:
     :exclude-members: after_invoke, before_invoke, check, check_once, command, event, group, listen
@@ -27,7 +27,7 @@ Bot
         :decorator:
 
     .. automethod:: Bot.check()
-        :decorator:versaversa
+        :decorator:versacordversacord
 
     .. automethod:: Bot.check_once()
         :decorator:
@@ -47,17 +47,17 @@ Bot
 AutoShardedBot
 ~~~~~~~~~~~~~~
 
-.. attributetable:: versaversa.ext.commands.AutoShardedBot
+.. attributetable:: versacordversacord.ext.commands.AutoShardedBot
 
-.. autoclass:: versaversa.ext.commands.AutoShardedBot
+.. autoclass:: versacordversacord.ext.commands.AutoShardedBot
     :members:
 
 Prefix Helpers
 --------------
 
-.. autofunction:: versaversa.ext.commands.when_mentioned
+.. autofunction:: versacordversacord.ext.commands.when_mentioned
 
-.. autofunction:: versaversa.ext.commands.when_mentioned_or
+.. autofunction:: versacordversacord.ext.commands.when_mentioned_or
 
 .. _ext_commands_api_events:
 
@@ -67,7 +67,7 @@ Event Reference
 These events function similar to :ref:`the regular events <discord-api-events>`, except they
 are custom to the command extension module.
 
-.. function:: versaversa.ext.commands.on_command_error(ctx, error)
+.. function:: versacordversacord.ext.commands.on_command_error(ctx, error)
 
     An error handler that is called when an error is raised
     inside a command either through user input error, check
@@ -80,7 +80,7 @@ are custom to the command extension module.
     :param error: The error that was raised.
     :type error: :class:`.CommandError` derived
 
-.. function:: versaversa.ext.commands.on_command(ctx)
+.. function:: versacordversacord.ext.commands.on_command(ctx)
 
     An event that is called when a command is found and is about to be invoked.
 
@@ -90,7 +90,7 @@ are custom to the command extension module.
     :param ctx: The invocation context.
     :type ctx: :class:`.Context`
 
-.. function:: versaversa.ext.commands.on_command_completion(ctx)
+.. function:: versacordversacord.ext.commands.on_command_completion(ctx)
 
     An event that is called when a command has completed its invocation.
 
@@ -108,18 +108,18 @@ Commands
 Decorators
 ~~~~~~~~~~
 
-.. autofunction:: versa.ext.commands.command
+.. autofunction:: versacord.ext.commands.command
     :decorator:
 
-.. autofunction:: versa.ext.commands.group
+.. autofunction:: versacord.ext.commands.group
     :decorator:
 
 Command
 ~~~~~~~
 
-.. attributetable:: versa.ext.commands.Command
+.. attributetable:: versacord.ext.commands.Command
 
-.. autoclass:: versa.ext.commands.Command
+.. autoclass:: versacord.ext.commands.Command
     :members:
     :special-members: __call__
     :exclude-members: after_invoke, before_invoke, error
@@ -136,9 +136,9 @@ Command
 Group
 ~~~~~
 
-.. attributetable:: versa.ext.commands.Group
+.. attributetable:: versacord.ext.commands.Group
 
-.. autoclass:: versa.ext.commands.Group
+.. autoclass:: versacord.ext.commands.Group
     :members:
     :inherited-members:
     :exclude-members: after_invoke, before_invoke, command, error, group
@@ -161,9 +161,9 @@ Group
 GroupMixin
 ~~~~~~~~~~
 
-.. attributetable:: versa.ext.commands.GroupMixin
+.. attributetable:: versacord.ext.commands.GroupMixin
 
-.. autoclass:: versa.ext.commands.GroupMixin
+.. autoclass:: versacord.ext.commands.GroupMixin
     :members:
     :exclude-members: command, group
 
@@ -181,17 +181,17 @@ Cogs
 Cog
 ~~~
 
-.. attributetable:: versa.ext.commands.Cog
+.. attributetable:: versacord.ext.commands.Cog
 
-.. autoclass:: versa.ext.commands.Cog
+.. autoclass:: versacord.ext.commands.Cog
     :members:
-versaversa
+versacordversacord
 CogMeta
 ~~~~~~~
 
-.. attributetable:: versa.ext.commands.CogMeta
+.. attributetable:: versacord.ext.commands.CogMeta
 
-.. autoclass:: versa.ext.commands.CogMeta
+.. autoclass:: versacord.ext.commands.CogMeta
     :members:
 
 .. _ext_commands_help_command:
@@ -202,42 +202,42 @@ Help Commands
 HelpCommand
 ~~~~~~~~~~~
 
-.. attributetable:: versaversa.ext.commands.HelpCommand
+.. attributetable:: versacordversacord.ext.commands.HelpCommand
 
-.. autoclass:: versaversa.ext.commands.HelpCommand
+.. autoclass:: versacordversacord.ext.commands.HelpCommand
     :members:
 
 DefaultHelpCommand
 ~~~~~~~~~~~~~~~~~~
 
-.. attributetable:: versaversa.ext.commands.DefaultHelpCommand
+.. attributetable:: versacordversacord.ext.commands.DefaultHelpCommand
 
-.. autoclass:: versaversa.ext.commands.DefaultHelpCommand
+.. autoclass:: versacordversacord.ext.commands.DefaultHelpCommand
     :members:
     :exclude-members: send_bot_help, send_cog_help, send_group_help, send_command_help, prepare_help_command
 
 MinimalHelpCommand
 ~~~~~~~~~~~~~~~~~~
 
-.. attributetable:: versaversa.ext.commands.MinimalHelpCommand
+.. attributetable:: versacordversacord.ext.commands.MinimalHelpCommand
 
-.. autoclass:: versaversa.ext.commands.MinimalHelpCommand
+.. autoclass:: versacordversacord.ext.commands.MinimalHelpCommand
     :members:
     :exclude-members: send_bot_help, send_cog_help, send_group_help, send_command_help, prepare_help_command
 
 Paginator
 ~~~~~~~~~
 
-.. attributetable:: versaversa.ext.commands.Paginator
+.. attributetable:: versacordversacord.ext.commands.Paginator
 
-.. autoclass:: versaversa.ext.commands.Paginator
+.. autoclass:: versacordversacord.ext.commands.Paginator
     :members:
 
 Enums
 -----
 
 .. class:: BucketType
-    :module: versaversa.ext.commands
+    :module: versacordversacord.ext.commands
 
     Specifies a type of bucket for, e.g. a cooldown.
 
@@ -271,61 +271,61 @@ Enums
 Checks
 ------
 
-.. autofunction:: versa.ext.commands.check(predicate)
+.. autofunction:: versacord.ext.commands.check(predicate)
     :decorator:
 
-.. autofunction:: versa.ext.commands.check_any(*checks)
+.. autofunction:: versacord.ext.commands.check_any(*checks)
     :decorator:
 
-.. autofunction:: versa.ext.commands.has_role(item)
+.. autofunction:: versacord.ext.commands.has_role(item)
     :decorator:
 
-.. autofunction:: versa.ext.commands.has_permissions(**perms)
+.. autofunction:: versacord.ext.commands.has_permissions(**perms)
     :decorator:
 
-.. autofunction:: versa.ext.commands.has_guild_permissions(**perms)
+.. autofunction:: versacord.ext.commands.has_guild_permissions(**perms)
     :decorator:
 
-.. autofunction:: versa.ext.commands.has_any_role(*items)
+.. autofunction:: versacord.ext.commands.has_any_role(*items)
     :decorator:
 
-.. autofunction:: versa.ext.commands.bot_has_role(item)
+.. autofunction:: versacord.ext.commands.bot_has_role(item)
     :decorator:
 
-.. autofunction:: versa.ext.commands.bot_has_permissions(**perms)
+.. autofunction:: versacord.ext.commands.bot_has_permissions(**perms)
     :decorator:
 
-.. autofunction:: versa.ext.commands.bot_has_guild_permissions(**perms)
+.. autofunction:: versacord.ext.commands.bot_has_guild_permissions(**perms)
     :decorator:
 
-.. autofunction:: versa.ext.commands.bot_has_any_role(*items)
+.. autofunction:: versacord.ext.commands.bot_has_any_role(*items)
     :decorator:
 
-.. autofunction:: versa.ext.commands.cooldown(rate, per, type=versa.ext.commands.BucketType.default)
+.. autofunction:: versacord.ext.commands.cooldown(rate, per, type=versacord.ext.commands.BucketType.default)
     :decorator:
 
-.. autofunction:: versa.ext.commands.dynamic_cooldown(cooldown, type=BucketType.default)
+.. autofunction:: versacord.ext.commands.dynamic_cooldown(cooldown, type=BucketType.default)
     :decorator:
 
-.. autofunction:: versa.ext.commands.max_concurrency(number, per=versa.ext.commands.BucketType.default, *, wait=False)
+.. autofunction:: versacord.ext.commands.max_concurrency(number, per=versacord.ext.commands.BucketType.default, *, wait=False)
     :decorator:
 
-.. autofunction:: versa.ext.commands.before_invoke(coro)
+.. autofunction:: versacord.ext.commands.before_invoke(coro)
     :decorator:
 
-.. autofunction:: versa.ext.commands.after_invoke(coro)
+.. autofunction:: versacord.ext.commands.after_invoke(coro)
     :decorator:
 
-.. autofunction:: versa.ext.commands.guild_only(,)
+.. autofunction:: versacord.ext.commands.guild_only(,)
     :decorator:
 
-.. autofunction:: versa.ext.commands.dm_only(,)
+.. autofunction:: versacord.ext.commands.dm_only(,)
     :decorator:
 
-.. autofunction:: versa.ext.commands.is_owner(,)
+.. autofunction:: versacord.ext.commands.is_owner(,)
     :decorator:
 
-.. autofunction:: versa.ext.commands.is_nsfw(,)
+.. autofunction:: versacord.ext.commands.is_nsfw(,)
     :decorator:
 
 .. _ext_commands_api_context:
@@ -333,25 +333,25 @@ Checks
 Cooldown
 --------
 
-.. attributetable:: versa.ext.commands.Cooldown
+.. attributetable:: versacord.ext.commands.Cooldown
 
-.. autoclass:: versa.ext.commands.Cooldown
+.. autoclass:: versacord.ext.commands.Cooldown
     :members:
 
 Context
 -------
 
-.. attributetable:: versa.ext.commands.Context
+.. attributetable:: versacord.ext.commands.Context
 
-.. autoclass:: versa.ext.commands.Context
+.. autoclass:: versacord.ext.commands.Context
     :members:
     :inherited-members:
     :exclude-members: history, typing
 
-    .. automethod:: versa.ext.commands.Context.history
+    .. automethod:: versacord.ext.commands.Context.history
         :async-for:
 
-    .. automethod:: versa.ext.commands.Context.typing
+    .. automethod:: versacord.ext.commands.Context.typing
         :async-with:
 
 .. _ext_commands_api_converters:
@@ -359,262 +359,262 @@ Context
 Converters
 ----------
 
-.. autoclass:: versa.ext.commands.Converter
+.. autoclass:: versacord.ext.commands.Converter
     :members:
 
-.. autoclass:: versa.ext.commands.ObjectConverter
+.. autoclass:: versacord.ext.commands.ObjectConverter
     :members:
 
-.. autoclass:: versa.ext.commands.MemberConverter
+.. autoclass:: versacord.ext.commands.MemberConverter
     :members:
 
-.. autoclass:: versa.ext.commands.UserConverter
+.. autoclass:: versacord.ext.commands.UserConverter
     :members:
 
-.. autoclass:: versa.ext.commands.MessageConverter
+.. autoclass:: versacord.ext.commands.MessageConverter
     :members:
 
-.. autoclass:: versa.ext.commands.PartialMessageConverter
+.. autoclass:: versacord.ext.commands.PartialMessageConverter
     :members:
 
-.. autoclass:: versa.ext.commands.GuildChannelConverter
+.. autoclass:: versacord.ext.commands.GuildChannelConverter
     :members:
 
-.. autoclass:: versa.ext.commands.TextChannelConverter
+.. autoclass:: versacord.ext.commands.TextChannelConverter
     :members:
 
-.. autoclass:: versa.ext.commands.VoiceChannelConverter
+.. autoclass:: versacord.ext.commands.VoiceChannelConverter
     :members:
 
-.. autoclass:: versa.ext.commands.StageChannelConverter
+.. autoclass:: versacord.ext.commands.StageChannelConverter
     :members:
 
-.. autoclass:: versa.ext.commands.CategoryChannelConverter
+.. autoclass:: versacord.ext.commands.CategoryChannelConverter
     :members:
 
-.. autoclass:: versa.ext.commands.InviteConverter
+.. autoclass:: versacord.ext.commands.InviteConverter
     :members:
 
-.. autoclass:: versa.ext.commands.GuildConverter
+.. autoclass:: versacord.ext.commands.GuildConverter
     :members:
 
-.. autoclass:: versa.ext.commands.RoleConverter
+.. autoclass:: versacord.ext.commands.RoleConverter
     :members:
 
-.. autoclass:: versa.ext.commands.GameConverter
+.. autoclass:: versacord.ext.commands.GameConverter
     :members:
 
-.. autoclass:: versa.ext.commands.ColourConverter
+.. autoclass:: versacord.ext.commands.ColourConverter
     :members:
 
-.. autoclass:: versa.ext.commands.EmojiConverter
+.. autoclass:: versacord.ext.commands.EmojiConverter
     :members:
 
-.. autoclass:: versa.ext.commands.PartialEmojiConverter
+.. autoclass:: versacord.ext.commands.PartialEmojiConverter
     :members:
 
-.. autoclass:: versa.ext.commands.ThreadConverter
+.. autoclass:: versacord.ext.commands.ThreadConverter
     :members:
 
-.. autoclass:: versa.ext.commands.GuildStickerConverter
+.. autoclass:: versacord.ext.commands.GuildStickerConverter
     :members:
 
-.. autoclass:: versa.ext.commands.clean_content
+.. autoclass:: versacord.ext.commands.clean_content
     :members:
 
-.. autoclass:: versa.ext.commands.Greedy()
+.. autoclass:: versacord.ext.commands.Greedy()
 
-.. autofunction:: versa.ext.commands.run_converters
+.. autofunction:: versacord.ext.commands.run_converters
 
 Flag Converter
 ~~~~~~~~~~~~~~
 
-.. autoclass:: versa.ext.commands.FlagConverter
+.. autoclass:: versacord.ext.commands.FlagConverter
     :members:
 
-.. autoclass:: versa.ext.commands.Flag()
+.. autoclass:: versacord.ext.commands.Flag()
     :members:
 
-.. autofunction:: versa.ext.commands.flag
+.. autofunction:: versacord.ext.commands.flag
 
 .. _ext_commands_api_errors:
 
 Warnings
 --------
 
-.. autoclass:: versa.ext.commands.MissingMessageContentIntentWarning
+.. autoclass:: versacord.ext.commands.MissingMessageContentIntentWarning
 
 Exceptions
 ----------
 
-.. autoexception:: versa.ext.commands.CommandError
+.. autoexception:: versacord.ext.commands.CommandError
     :members:
 
-.. autoexception:: versa.ext.commands.ConversionError
+.. autoexception:: versacord.ext.commands.ConversionError
     :members:
 
-.. autoexception:: versa.ext.commands.MissingRequiredArgument
+.. autoexception:: versacord.ext.commands.MissingRequiredArgument
     :members:
 
-.. autoexception:: versa.ext.commands.ArgumentParsingError
+.. autoexception:: versacord.ext.commands.ArgumentParsingError
     :members:
 
-.. autoexception:: versa.ext.commands.UnexpectedQuoteError
+.. autoexception:: versacord.ext.commands.UnexpectedQuoteError
     :members:
 
-.. autoexception:: versa.ext.commands.InvalidEndOfQuotedStringError
+.. autoexception:: versacord.ext.commands.InvalidEndOfQuotedStringError
     :members:
 
-.. autoexception:: versa.ext.commands.ExpectedClosingQuoteError
+.. autoexception:: versacord.ext.commands.ExpectedClosingQuoteError
     :members:
 
-.. autoexception:: versa.ext.commands.BadArgument
+.. autoexception:: versacord.ext.commands.BadArgument
     :members:
 
-.. autoexception:: versa.ext.commands.BadUnionArgument
+.. autoexception:: versacord.ext.commands.BadUnionArgument
     :members:
 
-.. autoexception:: versa.ext.commands.BadLiteralArgument
+.. autoexception:: versacord.ext.commands.BadLiteralArgument
     :members:
 
-.. autoexception:: versa.ext.commands.PrivateMessageOnly
+.. autoexception:: versacord.ext.commands.PrivateMessageOnly
     :members:
 
-.. autoexception:: versa.ext.commands.NoPrivateMessage
+.. autoexception:: versacord.ext.commands.NoPrivateMessage
     :members:
 
-.. autoexception:: versa.ext.commands.CheckFailure
+.. autoexception:: versacord.ext.commands.CheckFailure
     :members:
 
-.. autoexception:: versa.ext.commands.CheckAnyFailure
+.. autoexception:: versacord.ext.commands.CheckAnyFailure
     :members:
 
-.. autoexception:: versa.ext.commands.CommandNotFound
+.. autoexception:: versacord.ext.commands.CommandNotFound
     :members:
 
-.. autoexception:: versa.ext.commands.DisabledCommand
+.. autoexception:: versacord.ext.commands.DisabledCommand
     :members:
 
-.. autoexception:: versa.ext.commands.CommandInvokeError
+.. autoexception:: versacord.ext.commands.CommandInvokeError
     :members:
 
-.. autoexception:: versa.ext.commands.TooManyArguments
+.. autoexception:: versacord.ext.commands.TooManyArguments
     :members:
 
-.. autoexception:: versa.ext.commands.UserInputError
+.. autoexception:: versacord.ext.commands.UserInputError
     :members:
 
-.. autoexception:: versa.ext.commands.CommandOnCooldown
+.. autoexception:: versacord.ext.commands.CommandOnCooldown
     :members:
 
-.. autoexception:: versa.ext.commands.MaxConcurrencyReached
+.. autoexception:: versacord.ext.commands.MaxConcurrencyReached
     :members:
 
-.. autoexception:: versa.ext.commands.NotOwner
+.. autoexception:: versacord.ext.commands.NotOwner
     :members:
 
-.. autoexception:: versa.ext.commands.MessageNotFound
+.. autoexception:: versacord.ext.commands.MessageNotFound
     :members:
 
-.. autoexception:: versa.ext.commands.MemberNotFound
+.. autoexception:: versacord.ext.commands.MemberNotFound
     :members:
-versa.. autoexception:: versa.ext.commands.GuildNotFound
-    :members:
-
-.. autoexception:: versa.ext.commands.UserNotFound
+versacord.. autoexception:: versacord.ext.commands.GuildNotFound
     :members:
 
-.. autoexception:: versa.ext.commands.ChannelNotFound
+.. autoexception:: versacord.ext.commands.UserNotFound
     :members:
 
-.. autoexception:: versa.ext.commands.ScheduledEventNotFound
+.. autoexception:: versacord.ext.commands.ChannelNotFound
     :members:
 
-.. autoexception:: versa.ext.commands.ChannelNotReadable
+.. autoexception:: versacord.ext.commands.ScheduledEventNotFound
     :members:
 
-.. autoexception:: versa.ext.commands.ThreadNotFound
+.. autoexception:: versacord.ext.commands.ChannelNotReadable
     :members:
 
-.. autoexception:: versa.ext.commands.BadColourArgument
+.. autoexception:: versacord.ext.commands.ThreadNotFound
     :members:
 
-.. autoexception:: versa.ext.commands.RoleNotFound
+.. autoexception:: versacord.ext.commands.BadColourArgument
     :members:
 
-.. autoexception:: versa.ext.commands.BadInviteArgument
+.. autoexception:: versacord.ext.commands.RoleNotFound
     :members:
 
-.. autoexception:: versa.ext.commands.EmojiNotFound
+.. autoexception:: versacord.ext.commands.BadInviteArgument
     :members:
 
-.. autoexception:: versa.ext.commands.PartialEmojiConversionFailure
+.. autoexception:: versacord.ext.commands.EmojiNotFound
     :members:
 
-.. autoexception:: versa.ext.commands.GuildStickerNotFound
+.. autoexception:: versacord.ext.commands.PartialEmojiConversionFailure
     :members:
 
-.. autoexception:: versa.ext.commands.BadBoolArgument
+.. autoexception:: versacord.ext.commands.GuildStickerNotFound
     :members:
 
-.. autoexception:: versa.ext.commands.MissingPermissions
+.. autoexception:: versacord.ext.commands.BadBoolArgument
     :members:
 
-.. autoexception:: versa.ext.commands.BotMissingPermissions
+.. autoexception:: versacord.ext.commands.MissingPermissions
     :members:
 
-.. autoexception:: versa.ext.commands.MissingRole
+.. autoexception:: versacord.ext.commands.BotMissingPermissions
     :members:
 
-.. autoexception:: versa.ext.commands.BotMissingRole
+.. autoexception:: versacord.ext.commands.MissingRole
     :members:
 
-.. autoexception:: versa.ext.commands.MissingAnyRole
+.. autoexception:: versacord.ext.commands.BotMissingRole
     :members:
 
-.. autoexception:: versa.ext.commands.BotMissingAnyRole
+.. autoexception:: versacord.ext.commands.MissingAnyRole
     :members:
 
-.. autoexception:: versa.ext.commands.NSFWChannelRequired
+.. autoexception:: versacord.ext.commands.BotMissingAnyRole
     :members:
 
-.. autoexception:: versa.ext.commands.FlagError
+.. autoexception:: versacord.ext.commands.NSFWChannelRequired
     :members:
 
-.. autoexception:: versa.ext.commands.BadFlagArgument
+.. autoexception:: versacord.ext.commands.FlagError
     :members:
 
-.. autoexception:: versa.ext.commands.MissingFlagArgument
+.. autoexception:: versacord.ext.commands.BadFlagArgument
     :members:
 
-.. autoexception:: versa.ext.commands.TooManyFlags
+.. autoexception:: versacord.ext.commands.MissingFlagArgument
     :members:
 
-.. autoexception:: versa.ext.commands.MissingRequiredFlag
+.. autoexception:: versacord.ext.commands.TooManyFlags
     :members:
 
-.. autoexception:: versa.ext.commands.ExtensionError
+.. autoexception:: versacord.ext.commands.MissingRequiredFlag
     :members:
 
-.. autoexception:: versa.ext.commands.ExtensionAlreadyLoaded
+.. autoexception:: versacord.ext.commands.ExtensionError
     :members:
 
-.. autoexception:: versa.ext.commands.ExtensionNotLoaded
+.. autoexception:: versacord.ext.commands.ExtensionAlreadyLoaded
     :members:
 
-.. autoexception:: versa.ext.commands.NoEntryPointError
+.. autoexception:: versacord.ext.commands.ExtensionNotLoaded
     :members:
 
-.. autoexception:: versa.ext.commands.InvalidSetupArguments
+.. autoexception:: versacord.ext.commands.NoEntryPointError
     :members:
 
-.. autoexception:: versa.ext.commands.ExtensionFailed
+.. autoexception:: versacord.ext.commands.InvalidSetupArguments
     :members:
 
-.. autoexception:: versa.ext.commands.ExtensionNotFound
+.. autoexception:: versacord.ext.commands.ExtensionFailed
     :members:
 
-.. autoexception:: versa.ext.commands.CommandRegistrationError
+.. autoexception:: versacord.ext.commands.ExtensionNotFound
+    :members:
+
+.. autoexception:: versacord.ext.commands.CommandRegistrationError
     :members:
 
 

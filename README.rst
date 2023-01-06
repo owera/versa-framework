@@ -1,24 +1,24 @@
 .. image:: https://raw.githubusercontent.com/owera/versa-framework/master/assets/repo-banner.svg
-   :alt: Versa Framework
+   :alt: versacord Framework
 
 .. image:: https://img.shields.io/discord/1021941603042074706?color=blue&label=discord
    :target: https://discord.gg/Fee6Kptq57
    :alt: Discord server invite
-.. image:: https://img.shields.io/pypi/v/versa-framework.svg
-   :target: https://pypi.org/project/versa-framework/
+.. image:: https://img.shields.io/pypi/v/versacord-framework.svg
+   :target: https://pypi.org/project/versacord-framework/
    :alt: PyPI version info
-.. image:: https://img.shields.io/pypi/dm/versa-framework?color=informational&label=pypi%20downloads
-   :target: https://pypi.org/project/versa-framework/
+.. image:: https://img.shields.io/pypi/dm/versacord-framework?color=informational&label=pypi%20downloads
+   :target: https://pypi.org/project/versacord-framework/
    :alt: PyPI version info
-.. image:: https://img.shields.io/pypi/pyversions/versa-framework.svg
-   :target: https://pypi.org/project/versa-framework/
+.. image:: https://img.shields.io/pypi/pyversions/versacord-framework.svg
+   :target: https://pypi.org/project/versacord-framework/
    :alt: PyPI supported Python versions
-.. image:: https://img.shields.io/readthedocs/versa-framework
-   :target: https://docs.versa.dev/
-   :alt: Versa Framework documentation
+.. image:: https://img.shields.io/readthedocs/versacord-framework
+   :target: https://docs.versacord.dev/
+   :alt: versacord Framework documentation
 
-Versa Framework
---------
+Versacord Framework
+-------------------
 
 A modern, easy-to-use, feature-rich, and async-ready API wrapper for Discord written in Python.
 
@@ -40,30 +40,30 @@ To install the library without full voice support, you can just run the followin
 .. code:: sh
 
     # Linux/macOS
-    python3 -m pip install -U versa or using .git link repositore
+    python3 -m pip install -U versacord or using .git link repositore
 
     # Windows
-    py -3 -m pip install -U versa or using .git link repositore
+    py -3 -m pip install -U versacord or using .git link repositore
 
 Otherwise to get voice support you should run the following command:
 
 .. code:: sh
 
     # Linux/macOS
-    python3 -m pip install -U "versa[voice]"
+    python3 -m pip install -U "versacord[voice]"
 
     # Windows
-    py -3 -m pip install -U versa[voice]
+    py -3 -m pip install -U versacord[voice]
 
 To install additional packages for speedup, run the following command:
 
 .. code:: sh
 
     # Linux/macOS
-    python3 -m pip install -U "versa[speed]"
+    python3 -m pip install -U "versacord[speed]"
 
     # Windows
-    py -3 -m pip install -U versa[speed]
+    py -3 -m pip install -U versacord[speed]
 
 
 To install the development version, do the following:
@@ -71,7 +71,7 @@ To install the development version, do the following:
 .. code:: sh
 
     $ git clone https://github.com/owera/versa-framework/
-    $ cd versa
+    $ cd versacord
     $ python3 -m pip install -U .[voice]
 
 
@@ -93,13 +93,13 @@ Quick Example
 
 .. code:: py
 
-    from versa.ext import commands
+    from versacord.ext import commands
 
 
     bot = commands.Bot()
 
     @bot.slash_command(description="Replies with pong!")
-    async def ping(interaction: versa.Interaction):
+    async def ping(interaction: versacord.Interaction):
         await interaction.send("Pong!", ephemeral=True)
 
     bot.run("token")
@@ -111,6 +111,6 @@ You can find more examples in the `examples directory <https://github.com/owera/
 Links
 ------
 
-- `Documentation <https://docs.versa.dev/>`_
+- `Documentation <https://docs.versacord.dev/>`_
 - `Official Discord Server <https://discord.gg/Fee6Kptq57>`_
 - `Discord API <https://discord.gg/discord-api>`_

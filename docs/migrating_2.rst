@@ -1,4 +1,4 @@
-.. currentmodule:: versa
+.. currentmodule:: versacord
 
 .. _migrating_2_0:
 
@@ -30,7 +30,7 @@ Overview
 - Many method arguments now reject ``None``.
 - Many arguments are now specified as positional-only or keyword-only; e.g. :func:`oauth_url` now takes keyword-only arguments, and methods starting with ``get_`` or ``fetch_`` take positional-only arguments.
 - You must explicitly enable the :attr:`~Intents.message_content` intent to receive message :attr:`~Message.content`, :attr:`~Message.embeds`, :attr:`~Message.attachments`, and :attr:`~Message.components` in most messages.
-- :meth:`Guild.bans` is no longer a coroutine and returns an :class:`~versa.AsyncIterator` instead of a :class:`list`.
+- :meth:`Guild.bans` is no longer a coroutine and returns an :class:`~versacord.AsyncIterator` instead of a :class:`list`.
 - ``StoreChannel`` is removed as it is deprecated by Discord, see `here <https://support.discord.com/hc/en-us/articles/4688647258007-Self-serve-Game-Selling-Deprecation>`__ for more info.
 - ``ChannelType.store`` is removed.
 - ``AppInfo.summary``, ``AppInfo.guild_id``, ``AppInfo.primary_sku_id`` and ``AppInfo.slug`` are removed.
@@ -51,17 +51,17 @@ adapter arguments of :meth:`Webhook.partial` and :meth:`Webhook.from_url` are re
 
 .. code-block:: python3
 
-    webhook = versa.SyncWebhook.from_url(
+    webhook = versacord.SyncWebhook.from_url(
             f"https://discord.com/api/webhooks/{id}/{token}"
         )
-    webhook.send("Hello from versa!")
+    webhook.send("Hello from versacord!")
     async with aiohttp.ClientSession() as session:
-        webhook = versa.Webhook.partial(
+        webhook = versacord.Webhook.partial(
                 id,
                 token,
                 session=session
             )
-        await webhook.send("Hello from versa!")
+        await webhook.send("Hello from versacord!")
 
 
 Asset changes
@@ -114,7 +114,7 @@ TL;DR: :func:`utils.utcnow` becomes now(:attr:`datetime.timezone.utc`). If you a
         timestamp = datetime(2021, 3, 14, 15, 9, 2, tzinfo=timezone.utc)
     )
 
-Note that newly-added :func:`versa.utils.utcnow()` can be used as an alias of ``datetime.datetime.now(datetime.timezone.utc)``.
+Note that newly-added :func:`versacord.utils.utcnow()` can be used as an alias of ``datetime.datetime.now(datetime.timezone.utc)``.
 
 Embed.__bool__ change
 ^^^^^^^^^^^^^^^^^^^^^
@@ -275,7 +275,7 @@ You can do this by using :meth:`Intents.all` or by setting :attr:`~Intents.messa
 
 .. code-block:: python3
 
-    intents = versa.Intents.default()
+    intents = versacord.Intents.default()
     intents.message_content = True
 
 For more information go to the :ref:`message content intent documentation <need_message_content_intent>`.
@@ -283,7 +283,7 @@ For more information go to the :ref:`message content intent documentation <need_
 Guild.bans now returns an AsyncIterator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-:meth:`Guild.bans` returns an :class:`~versa.AsyncIterator` instead of a :class:`list`.
+:meth:`Guild.bans` returns an :class:`~versacord.AsyncIterator` instead of a :class:`list`.
 
 .. code-block:: python3
 

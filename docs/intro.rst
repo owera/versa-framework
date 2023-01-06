@@ -1,19 +1,19 @@
 :orphan:
 
-.. currentmodule:: versa
+.. currentmodule:: versacord
 
 .. _intro:
 
 Introduction
 ============
 
-This is the documentation for Versa Framework, a library for Python to aid
+This is the documentation for versacord Framework, a library for Python to aid
 in creating applications that utilise the Discord API.
 
 Prerequisites
 -------------
 
-Versa Framework works with Python 3.8 or higher. Support for earlier versions of Python
+versacord Framework works with Python 3.8 or higher. Support for earlier versions of Python
 is not provided. Python 2.7 or lower is not supported. Python 3.7 or lower is not supported.
 
 
@@ -24,16 +24,16 @@ Installing
 
 You can get the library directly from PyPI: ::
 
-    python3 -m pip install -U versa or using .git link repositore
+    python3 -m pip install -U versacord or using .git link repositore
 
 If you are using Windows and have not installed Python to PATH, then the following should be used instead: ::
 
-    py -3 -m pip install -U versa or using .git link repositore
+    py -3 -m pip install -U versacord or using .git link repositore
 
 
-To get voice support, you should use ``versa[voice]`` instead of ``versa``, e.g. ::
+To get voice support, you should use ``versacord[voice]`` instead of ``versacord``, e.g. ::
 
-    python3 -m pip install -U versa[voice]
+    python3 -m pip install -U versacord[voice]
 
 On Linux environments, installing voice requires getting the following dependencies:
 
@@ -84,14 +84,14 @@ However, for the quick and dirty:
 
     .. code-block:: shell
 
-        $ pip install -U versa or using .git link repositore
+        $ pip install -U versacord or using .git link repositore
 
 Congratulations. You now have a virtual environment all set up.
 
 Basic Concepts
 --------------
 
-Versa Framework revolves around the concept of :ref:`events <discord-api-events>`.
+versacord Framework revolves around the concept of :ref:`events <discord-api-events>`.
 An event is something you listen to and then respond to. For example, when a message
 happens, you will receive an event about it that you can respond to.
 
@@ -99,7 +99,7 @@ A quick example to showcase how events work:
 
 .. code-block:: python3
 
-    from versa.ext import commands
+    from versacord.ext import commands
 
     # the prefix is not used in this example
     bot = commands.Bot(command_prefix='$')

@@ -1,4 +1,4 @@
-# Contributing to Versa Framework
+# Contributing to versacord Framework
 
 First off, thanks for taking the time to contribute. It makes the library substantially better. :+1:
 
@@ -9,8 +9,8 @@ The following is a set of guidelines for contributing to the repository. These a
 Generally asking questions are better suited in our resources below.
 
 - [The official support server](https://discord.gg/Fee6Kptq57)
-- [The FAQ in the documentation](https://versa.readthedocs.io/en/latest/faq.html)
-- [StackOverflow's `versa` tag](https://stackoverflow.com/questions/tagged/versa)
+- [The FAQ in the documentation](https://versacord.readthedocs.io/en/latest/faq.html)
+- [StackOverflow's `versacord` tag](https://stackoverflow.com/questions/tagged/versacord)
 - [The discussions page](https://discord.gg/ZSqV7CC2cr)
 
 Please try your best not to ask questions in our issue tracker. Most of them don't belong there unless they provide value to a larger audience.
@@ -26,7 +26,7 @@ Please be aware of the following things when filing bug reports.
     - Guidance on **how to reproduce the issue**. Ideally, this should have a small code sample that allows us to run and see the issue for ourselves to debug. **Please make sure that the token is not displayed**. If you cannot provide a code snippet, then let us know what the steps were, how often it happens, etc.
     - Tell us **what you expected to happen**, that way we can meet that expectation.
     - Tell us **what actually happens**. What ends up happening in reality? It's not helpful to say "it fails" or "it doesn't work". Say *how* it failed, do you get an exception? Does it hang? How are the expectations different from reality?
-    - Tell us **information about your environment**. What version of versa framework are you using? How was it installed? What operating system are you running on? These are valuable questions and information that we use.
+    - Tell us **information about your environment**. What version of versacord framework are you using? How was it installed? What operating system are you running on? These are valuable questions and information that we use.
 
 If the bug report is missing this information then it'll take us longer to fix the issue. We will probably ask for clarification, and barring that if no response was given then the issue will be closed.
 
@@ -61,13 +61,13 @@ If you would like these to run automatically, you can use `task precommit` to in
 
 ## Type Annotations
 
-Versa framework uses [Pyright](https://github.com/microsoft/pyright) for type checking. To use it, run `task pyright` in the root directory of the project, or `python -m task pyright` (`py -m` etc) if that does not work.
+versacord framework uses [Pyright](https://github.com/microsoft/pyright) for type checking. To use it, run `task pyright` in the root directory of the project, or `python -m task pyright` (`py -m` etc) if that does not work.
 
 If type annotations are new to you, here is a [guide](https://decorator-factory.github.io/typing-tips/) to help you with it.
 
 ## Commits
 
-Versa framework follows the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) style. This means that your commit messages and PR titles should be formatted in a specific way. This is to help us generate changelogs and release notes, whilst also helping us review your pull requests as we can see what each commit does.
+versacord framework follows the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) style. This means that your commit messages and PR titles should be formatted in a specific way. This is to help us generate changelogs and release notes, whilst also helping us review your pull requests as we can see what each commit does.
 
 Your commit messages should be in the present (imperative, 2nd person) tense, such as `Add`, not `Added`.
 
@@ -141,7 +141,7 @@ The footer contains optional metadata about the commit. These are sometimes adde
 
 ## Documentation
 
-Versa framework uses [Sphinx](https://www.sphinx-doc.org/en/master/) for documentation compilation. Specifically, we use the numpy format ([Reference](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard), [Examples](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html)).
+versacord framework uses [Sphinx](https://www.sphinx-doc.org/en/master/) for documentation compilation. Specifically, we use the numpy format ([Reference](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard), [Examples](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html)).
 
 ### Building the Docs
 
@@ -158,7 +158,7 @@ We use [`.. versionadded::`](https://www.sphinx-doc.org/en/master/usage/restruct
 
 These should not be used in methods in a new class, since the whole class is new.
 
-The current in-development version can be found in `versa/__init__.py` at `__version__`.
+The current in-development version can be found in `versacord/__init__.py` at `__version__`.
 
 #### Versioning Example
 
@@ -251,11 +251,11 @@ async def sleep_until(...) -> Optional[T]:
 
 We use [TypedDict](https://docs.python.org/3/library/typing.html#typing.TypedDict) to type payloads. This is a dictionary with a specific set of keys, where the values have a specific type.
 
-These are stored in `versa/types`, where the file name relates to the `versa/` filename.
+These are stored in `versacord/types`, where the file name relates to the `versacord/` filename.
 
 These are Python representations of Discord payloads found in the [Discord API docs](https://discord.dev). [`typing_extensions.NotRequired`](https://peps.python.org/pep-0655/) is used for keys which are omitted, represented by `name?` in the Discord docs. [`typing.Optional`](https://docs.python.org/3/library/typing.html#typing.Optional) is used for keys which may be `null` (`None`), represented by `?type` in the Discord docs.
 
-`versa.types.snowflake.Snowflake` is used for Snowflakes, which are Discord IDs.
+`versacord.types.snowflake.Snowflake` is used for Snowflakes, which are Discord IDs.
 
 ### Typed Payloads Example
 
@@ -278,7 +278,7 @@ class AutoModerationActionExecution(TypedDict):
 
 ## Gateway Events
 
-[Gateway events](https://discord.com/developers/docs/topics/gateway-events#receive-events) are stored in `versa/state.py` as async methods of `ConnectionState`. These are named `parse_{event}` where event is the lowercase name of Discord's event name.
+[Gateway events](https://discord.com/developers/docs/topics/gateway-events#receive-events) are stored in `versacord/state.py` as async methods of `ConnectionState`. These are named `parse_{event}` where event is the lowercase name of Discord's event name.
 
 Client events are dispatched via `ConnectionState.dispatch`, which is a wrapper around `Client.dispatch`. The event name is the end-user event name, but without the `on_` prefix.
 

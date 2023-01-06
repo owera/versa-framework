@@ -1,5 +1,5 @@
 #
-# versa framework documentation build configuration file
+# versacord framework documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -79,8 +79,8 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "Versa Framework"
-copyright = "2015-2021, Rapptz, 2022-present Versa Developers"
+project = "versacord Framework"
+copyright = "2015-2021, Rapptz, 2022-present versacord Developers"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -89,7 +89,7 @@ copyright = "2015-2021, Rapptz, 2022-present Versa Developers"
 # The short X.Y version.
 
 version = ""
-with open("../versa/__init__.py") as f:
+with open("../versacord/__init__.py") as f:
     match = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE)
 
     if not match or match.group(1) is None:
@@ -150,7 +150,7 @@ pygments_style = "friendly"
 
 # Nitpicky mode options
 nitpick_ignore_files = [
-    "migrating_to_versa",
+    "migrating_to_versacord",
     "migrating_2",
     "migrating_to_async",
     "migrating",
@@ -168,9 +168,9 @@ html_theme = "basic"
 html_context = {
     "discord_invite": "https://discord.gg/Fee6Kptq57",
     "discord_extensions": [
-        ("versa.ext.commands", "ext/commands"),
-        ("versa.ext.tasks", "ext/tasks"),
-        ("versa.ext.application_checks", "ext/application_checks"),
+        ("versacord.ext.commands", "ext/commands"),
+        ("versacord.ext.tasks", "ext/tasks"),
+        ("versacord.ext.application_checks", "ext/application_checks"),
     ],
 }
 
@@ -204,7 +204,7 @@ resource_links = {
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-html_favicon = "./images/versa_logo.ico"
+html_favicon = "./images/versacord_logo.ico"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -274,7 +274,7 @@ html_search_scorer = "_static/scorer.js"
 html_js_files = ["custom.js", "settings.js", "copy.js", "sidebar.js"]
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "versadoc"
+htmlhelp_basename = "versacorddoc"
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -293,7 +293,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    ("index", "versa.tex", "Versa Documentation", "Rapptz", "manual"),
+    ("index", "versacord.tex", "versacord Documentation", "Rapptz", "manual"),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -321,7 +321,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [("index", "versa", "Versa Documentation", ["Rapptz", "Versa Developers"], 1)]
+man_pages = [("index", "versacord", "versacord Documentation", ["Rapptz", "versacord Developers"], 1)]
 
 # If true, show URL addresses after external links.
 # man_show_urls = False
@@ -335,10 +335,10 @@ man_pages = [("index", "versa", "Versa Documentation", ["Rapptz", "Versa Develop
 texinfo_documents = [
     (
         "index",
-        "versa",
-        "Versa Documentation",
-        "Rapptz & Versa Developers",
-        "versa",
+        "versacord",
+        "versacord Documentation",
+        "Rapptz & versacord Developers",
+        "versacord",
         "One line description of project.",
         "Miscellaneous",
     ),

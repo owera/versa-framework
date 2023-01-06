@@ -2,7 +2,7 @@
 
 .. _quickstart:
 
-.. currentmodule:: versa
+.. currentmodule:: versacord
 
 Quickstart
 ==========
@@ -19,8 +19,8 @@ It looks something like this:
 
 .. code-block:: python3
 
-    import versa
-    from versa.ext import commands
+    import versacord
+    from versacord.ext import commands
 
     TESTING_GUILD_ID = 123456789  # Replace with your guild ID
 
@@ -31,12 +31,12 @@ It looks something like this:
         print(f'We have logged in as {bot.user}')
 
     @bot.slash_command(description="My first slash command", guild_ids=[TESTING_GUILD_ID])
-    async def hello(interaction: versa.Interaction):
+    async def hello(interaction: versacord.Interaction):
         await interaction.send("Hello!")
 
     bot.run('your token here')
 
-Let's name this file ``example_bot.py``. Make sure not to name it ``versa`` as that'll conflict
+Let's name this file ``example_bot.py``. Make sure not to name it ``versacord`` as that'll conflict
 with the library.
 
 A lot is going on here, so let's walk you through it step by step.
@@ -44,19 +44,19 @@ A lot is going on here, so let's walk you through it step by step.
 1. The first line just imports the library, if this raises a :exc:`ModuleNotFoundError` or :exc:`ImportError`
    then head on over to :ref:`installing` section to properly install.
 2. The second line imports the :doc:`Bot commands framework <./ext/commands/index>` which allows us to use the
-   :class:`~versa.ext.commands.Bot` class to create our bot.
+   :class:`~versacord.ext.commands.Bot` class to create our bot.
 3. After that, we will declare a constant called ``TESTING_GUILD_ID`` which will be used to identify the guild
    we want to use. This will allow us to test the command immediately in our server. Without this, we would have
    to wait up to an hour for the global command to register.
-4. Next, we create an instance of a :class:`~versa.ext.commands.Bot`. This bot is our connection to Discord.
-5. We then use the :meth:`bot.event <versa.ext.commands.Bot.event>` decorator to register an event. This library has many
+4. Next, we create an instance of a :class:`~versacord.ext.commands.Bot`. This bot is our connection to Discord.
+5. We then use the :meth:`bot.event <versacord.ext.commands.Bot.event>` decorator to register an event. This library has many
    :ref:`events <discord-api-events>`. Since this library is asynchronous, we do things in a "callback" style manner.
 
    A callback is essentially a function that is called when something happens. In our case,
    the :func:`on_ready` event is called when the bot has finished logging in and setting things up.
-6. Next, we use the :meth:`bot.slash_command <versa.ext.commands.Bot.slash_command>` decorator to register a slash command.
+6. Next, we use the :meth:`bot.slash_command <versacord.ext.commands.Bot.slash_command>` decorator to register a slash command.
    This decorator can take arguments for configuring the slash commands such as the description and guild IDs where you want
-   the command to be registered. The callback of the slash command takes in an :class:`~versa.Interaction` object as a
+   the command to be registered. The callback of the slash command takes in an :class:`~versacord.Interaction` object as a
    parameter which can be used to respond to the user. In the callback, we use the method :meth:`Interaction.send` to reply.
 7. Finally, we run the bot with our login token. If you need help getting your token or creating a bot,
    look in the :ref:`discord-intro` section.

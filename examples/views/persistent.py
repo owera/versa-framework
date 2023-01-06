@@ -1,5 +1,5 @@
-import versa
-from versa.ext import application_checks, commands
+import versacord
+from versacord.ext import application_checks, commands
 
 
 # Define a simple View that persists between bot restarts
@@ -10,26 +10,26 @@ from versa.ext import application_checks, commands
 # prevent conflicts with other buttons the bot sends.
 # For this example the custom_id is prefixed with the name of the bot.
 # Note that custom_ids can only be up to 100 characters long.
-class PersistentView(versa.ui.View):
+class PersistentView(versacord.ui.View):
     def __init__(self):
         super().__init__(timeout=None)
 
-    @versa.ui.button(
-        label="Green", style=versa.ButtonStyle.green, custom_id="persistent_view:green"
+    @versacord.ui.button(
+        label="Green", style=versacord.ButtonStyle.green, custom_id="persistent_view:green"
     )
-    async def green(self, button: versa.ui.Button, interaction: versa.Interaction):
+    async def green(self, button: versacord.ui.Button, interaction: versacord.Interaction):
         await interaction.response.send_message("This is green.", ephemeral=True)
 
-    @versa.ui.button(
-        label="Red", style=versa.ButtonStyle.red, custom_id="persistent_view:red"
+    @versacord.ui.button(
+        label="Red", style=versacord.ButtonStyle.red, custom_id="persistent_view:red"
     )
-    async def red(self, button: versa.ui.Button, interaction: versa.Interaction):
+    async def red(self, button: versacord.ui.Button, interaction: versacord.Interaction):
         await interaction.response.send_message("This is red.", ephemeral=True)
 
-    @versa.ui.button(
-        label="Grey", style=versa.ButtonStyle.grey, custom_id="persistent_view:grey"
+    @versacord.ui.button(
+        label="Grey", style=versacord.ButtonStyle.grey, custom_id="persistent_view:grey"
     )
-    async def grey(self, button: versa.ui.Button, interaction: versa.Interaction):
+    async def grey(self, button: versacord.ui.Button, interaction: versacord.Interaction):
         await interaction.response.send_message("This is grey.", ephemeral=True)
 
 

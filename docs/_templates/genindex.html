@@ -9,12 +9,12 @@
   // this is pretty finicky but it should work.
   for (let el of elements) {
     let key = el.getAttribute('href').split('#', 2)[1]
-    if (!key.startsWith('versa.')) {
+    if (!key.startsWith('versacord.')) {
       continue;
     }
 
-    if (key.startsWith('versa.ext.')) {
-      key = key.substr(12); // versa.ext.
+    if (key.startsWith('versacord.ext.')) {
+      key = key.substr(12); // versacord.ext.
     }
 
     if (el.textContent.indexOf('()') !== -1) {

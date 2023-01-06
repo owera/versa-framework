@@ -1,6 +1,6 @@
-import versa
-from versa import Interaction, SlashOption
-from versa.ext import commands
+import versacord
+from versacord import Interaction, SlashOption
+from versacord.ext import commands
 
 TESTING_GUILD_ID = 123456789  # Replace with your testing guild id
 
@@ -22,7 +22,7 @@ async def choose_a_number(
 @bot.slash_command(guild_ids=[TESTING_GUILD_ID])
 async def hi(
     interaction: Interaction,
-    member: versa.Member = SlashOption(name="user", description="User to say hi to"),
+    member: versacord.Member = SlashOption(name="user", description="User to say hi to"),
 ):
     await interaction.response.send_message(f"{interaction.user} just said hi to {member.mention}")
 

@@ -1,7 +1,7 @@
 .. _discord_ext_application_checks:
-.. module:: versa.ext.application_checks
+.. module:: versacord.ext.application_checks
 
-``versa.ext.application_checks`` - checks and hooks for application commands
+``versacord.ext.application_checks`` - checks and hooks for application commands
 ===============================================================================
 
 This extension aids in development of application commands by hooking and checking before, during, after invoke and handling errors.

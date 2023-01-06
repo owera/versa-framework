@@ -1,5 +1,5 @@
-from versa import Interaction, SlashOption
-from versa.ext import commands
+from versacord import Interaction, SlashOption
+from versacord.ext import commands
 
 TESTING_GUILD_ID = 123456789  # Replace with your testing guild id
 

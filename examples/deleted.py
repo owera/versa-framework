@@ -1,17 +1,17 @@
-import versa
-from versa.ext import commands
+import versacord
+from versacord.ext import commands
 
 
 class Bot(commands.Bot):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-    async def on_message_delete(self, message: versa.Message):
+    async def on_message_delete(self, message: versacord.Message):
         msg = f"{message.author} has deleted the message: {message.content}"
         await message.channel.send(msg)
 
 
-intents = versa.Intents.default()
+intents = versacord.Intents.default()
 intents.message_content = True
 bot = Bot(command_prefix="$", intents=intents)
 

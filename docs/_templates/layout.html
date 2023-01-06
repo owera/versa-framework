@@ -61,7 +61,7 @@
     {#- The main navigation header #}
     <header class="grid-item">
       <nav>
-        <a href="{{ pathto(master_doc)|e }}" class="main-heading">versa framework</a>
+        <a href="{{ pathto(master_doc)|e }}" class="main-heading">versacord framework</a>
         <a href="https://github.com/owera/versa-framework/" title="GitHub"><span
             class="material-icons custom-icons">github</span></a>
         <a href="{{ discord_invite }}" title="{{ _('Discord') }}"><span
@@ -89,9 +89,9 @@
       <label for="documentation_select">{{ _('View Documentation For') }}</label>
       <select id="documentation_select" onchange="window.location = this.value;">
         {%- if pagename is prefixedwith 'ext/' %}
-        <option value="{{ pathto(master_doc)|e }}">versa</option>
+        <option value="{{ pathto(master_doc)|e }}">versacord</option>
         {%- else %}
-        <option value="{{ pathto(pagename) }}" selected>versa</option>
+        <option value="{{ pathto(pagename) }}" selected>versacord</option>
         {%- endif %}
         {%- for ext, p in discord_extensions %}
         <option value="{{ pathto(p + '/index')|e }}" {% if pagename is prefixedwith p %}selected{% endif %}>{{ ext }}

@@ -1,9 +1,9 @@
-.. currentmodule:: versa
+.. currentmodule:: versacord
 
 API Reference
 =============
 
-The following section outlines the API of versa.
+The following section outlines the API of versacord.
 
 .. note::
 
@@ -11,7 +11,7 @@ The following section outlines the API of versa.
     in an output-independent way.  If the logging module is not configured,
     these logs will not be output anywhere.  See :ref:`logging_setup` for
     more information on how to set up and use the logging module with
-    versa.
+    versacord.
 
 Version Related Info
 --------------------
@@ -171,9 +171,9 @@ PCMVolumeTransformer
 Opus Library
 ~~~~~~~~~~~~
 
-.. autofunction:: versa.opus.load_opus
+.. autofunction:: versacord.opus.load_opus
 
-.. autofunction:: versa.opus.is_loaded
+.. autofunction:: versacord.opus.is_loaded
 
 .. _discord-api-events:
 
@@ -186,9 +186,9 @@ There are two ways to register an event, the first way is through the use of
 :meth:`Client.event`. The second way is through subclassing :class:`Client` and
 overriding the specific events. For example: ::
 
-    import versa
+    import versacord
 
-    class MyClient(versa.Client):
+    class MyClient(versacord.Client):
         async def on_message(self, message):
             if message.author == self.user:
                 return
@@ -647,7 +647,7 @@ to handle it, which defaults to print a traceback and ignoring the exception.
 
         This is a low level function that is not generally meant to be used.
         If you are working with components, consider using the callbacks associated
-        with the :class:`~versa.ui.View` instead as it provides a nicer user experience.
+        with the :class:`~versacord.ui.View` instead as it provides a nicer user experience.
 
     .. versionadded:: 2.0
 
@@ -1207,37 +1207,37 @@ to handle it, which defaults to print a traceback and ignoring the exception.
 Utility Functions
 -----------------
 
-.. autofunction:: versa.utils.find
+.. autofunction:: versacord.utils.find
 
-.. autofunction:: versa.utils.get
+.. autofunction:: versacord.utils.get
 
-.. autofunction:: versa.utils.snowflake_time
+.. autofunction:: versacord.utils.snowflake_time
 
-.. autofunction:: versa.utils.oauth_url
+.. autofunction:: versacord.utils.oauth_url
 
-.. autofunction:: versa.utils.remove_markdown
+.. autofunction:: versacord.utils.remove_markdown
 
-.. autofunction:: versa.utils.escape_markdown
+.. autofunction:: versacord.utils.escape_markdown
 
-.. autofunction:: versa.utils.escape_mentions
+.. autofunction:: versacord.utils.escape_mentions
 
-.. autofunction:: versa.utils.parse_raw_mentions
+.. autofunction:: versacord.utils.parse_raw_mentions
 
-.. autofunction:: versa.utils.parse_raw_role_mentions
+.. autofunction:: versacord.utils.parse_raw_role_mentions
 
-.. autofunction:: versa.utils.parse_raw_channel_mentions
+.. autofunction:: versacord.utils.parse_raw_channel_mentions
 
-.. autofunction:: versa.utils.resolve_invite
+.. autofunction:: versacord.utils.resolve_invite
 
-.. autofunction:: versa.utils.resolve_template
+.. autofunction:: versacord.utils.resolve_template
 
-.. autofunction:: versa.utils.sleep_until
+.. autofunction:: versacord.utils.sleep_until
 
-.. autofunction:: versa.utils.utcnow
+.. autofunction:: versacord.utils.utcnow
 
-.. autofunction:: versa.utils.format_dt
+.. autofunction:: versacord.utils.format_dt
 
-.. autofunction:: versa.utils.as_chunks
+.. autofunction:: versacord.utils.as_chunks
 
 .. _discord-api-enums:
 
@@ -1421,7 +1421,7 @@ of :class:`enum.Enum`.
     .. attribute:: thread_starter_message
 
         The system message denoting the message in the thread that is the one that started the
-        thread's conversation topic.
+        thread's conversacordtion topic.
 
         .. versionadded:: 2.0
     .. attribute:: guild_invite_reminder
@@ -3738,7 +3738,7 @@ AuditLogDiff
 Webhook Support
 ---------------
 
-versa offers support for creating, editing, and executing webhooks through the :class:`Webhook` class.
+versacord offers support for creating, editing, and executing webhooks through the :class:`Webhook` class.
 
 Webhook
 ~~~~~~~
@@ -3789,56 +3789,56 @@ This library has a module related to abstract base classes, in which all the ABC
 Snowflake
 ~~~~~~~~~
 
-.. attributetable:: versa.abc.Snowflake
+.. attributetable:: versacord.abc.Snowflake
 
-.. autoclass:: versa.abc.Snowflake()
+.. autoclass:: versacord.abc.Snowflake()
     :members:
 
 User
 ~~~~
 
-.. attributetable:: versa.abc.User
+.. attributetable:: versacord.abc.User
 
-.. autoclass:: versa.abc.User()
+.. autoclass:: versacord.abc.User()
     :members:
 
 PrivateChannel
 ~~~~~~~~~~~~~~
 
-.. attributetable:: versa.abc.PrivateChannel
+.. attributetable:: versacord.abc.PrivateChannel
 
-.. autoclass:: versa.abc.PrivateChannel()
+.. autoclass:: versacord.abc.PrivateChannel()
     :members:
 
 GuildChannel
 ~~~~~~~~~~~~
 
-.. attributetable:: versa.abc.GuildChannel
+.. attributetable:: versacord.abc.GuildChannel
 
-.. autoclass:: versa.abc.GuildChannel()
+.. autoclass:: versacord.abc.GuildChannel()
     :members:
 
 Messageable
 ~~~~~~~~~~~
 
-.. attributetable:: versa.abc.Messageable
+.. attributetable:: versacord.abc.Messageable
 
-.. autoclass:: versa.abc.Messageable()
+.. autoclass:: versacord.abc.Messageable()
     :members:
     :exclude-members: history, typing
 
-    .. automethod:: versa.abc.Messageable.history
+    .. automethod:: versacord.abc.Messageable.history
         :async-for:
 
-    .. automethod:: versa.abc.Messageable.typing
+    .. automethod:: versacord.abc.Messageable.typing
         :async-with:
 
 Connectable
 ~~~~~~~~~~~
 
-.. attributetable:: versa.abc.Connectable
+.. attributetable:: versacord.abc.Connectable
 
-.. autoclass:: versa.abc.Connectable()
+.. autoclass:: versacord.abc.Connectable()
 
 .. _discord_api_models:
 
@@ -4673,116 +4673,116 @@ The library has helpers to help create component-based UIs.
 View
 ~~~~
 
-.. attributetable:: versa.ui.View
+.. attributetable:: versacord.ui.View
 
-.. autoclass:: versa.ui.View
+.. autoclass:: versacord.ui.View
     :members:
 
 Modal
 ~~~~~
 
-.. attributetable:: versa.ui.Modal
+.. attributetable:: versacord.ui.Modal
 
-.. autoclass:: versa.ui.Modal
+.. autoclass:: versacord.ui.Modal
     :members:
 
 Item
 ~~~~
 
-.. attributetable:: versa.ui.Item
+.. attributetable:: versacord.ui.Item
 
-.. autoclass:: versa.ui.Item
+.. autoclass:: versacord.ui.Item
     :members:
 
 Button
 ~~~~~~
 
-.. attributetable:: versa.ui.Button
+.. attributetable:: versacord.ui.Button
 
-.. autoclass:: versa.ui.Button
+.. autoclass:: versacord.ui.Button
     :members:
     :inherited-members:
 
-.. autofunction:: versa.ui.button
+.. autofunction:: versacord.ui.button
 
 TextInput
 ~~~~~~~~~
 
-.. attributetable:: versa.ui.TextInput
+.. attributetable:: versacord.ui.TextInput
 
-.. autoclass:: versa.ui.TextInput
+.. autoclass:: versacord.ui.TextInput
     :members:
     :inherited-members:
 
 StringSelect
 ~~~~~~~~~~~~
 
-.. attributetable:: versa.ui.StringSelect
+.. attributetable:: versacord.ui.StringSelect
 
-.. autoclass:: versa.ui.StringSelect
+.. autoclass:: versacord.ui.StringSelect
     :members:
     :inherited-members:
 
-.. autofunction:: versa.ui.string_select
+.. autofunction:: versacord.ui.string_select
 
-.. autoclass:: versa.ui.Select
+.. autoclass:: versacord.ui.Select
 
-.. autofunction:: versa.ui.select
+.. autofunction:: versacord.ui.select
 
 UserSelect
 ~~~~~~~~~~
 
-.. attributetable:: versa.ui.UserSelect
+.. attributetable:: versacord.ui.UserSelect
 
-.. autoclass:: versa.ui.UserSelect
+.. autoclass:: versacord.ui.UserSelect
     :members:
     :inherited-members:
 
-.. autofunction:: versa.ui.user_select
+.. autofunction:: versacord.ui.user_select
 
-.. autoclass:: versa.ui.UserSelectValues
+.. autoclass:: versacord.ui.UserSelectValues
     :members:
 
 RoleSelect
 ~~~~~~~~~~
 
-.. attributetable:: versa.ui.RoleSelect
+.. attributetable:: versacord.ui.RoleSelect
 
-.. autoclass:: versa.ui.RoleSelect
+.. autoclass:: versacord.ui.RoleSelect
     :members:
     :inherited-members:
 
-.. autofunction:: versa.ui.role_select
+.. autofunction:: versacord.ui.role_select
 
-.. autoclass:: versa.ui.RoleSelectValues
+.. autoclass:: versacord.ui.RoleSelectValues
     :members:
 
 MentionableSelect
 ~~~~~~~~~~~~~~~~~
 
-.. attributetable:: versa.ui.MentionableSelect
+.. attributetable:: versacord.ui.MentionableSelect
 
-.. autoclass:: versa.ui.MentionableSelect
+.. autoclass:: versacord.ui.MentionableSelect
     :members:
     :inherited-members:
 
-.. autofunction:: versa.ui.mentionable_select
+.. autofunction:: versacord.ui.mentionable_select
 
-.. autoclass:: versa.ui.MentionableSelectValues
+.. autoclass:: versacord.ui.MentionableSelectValues
     :members:
 
 ChannelSelect
 ~~~~~~~~~~~~~
 
-.. attributetable:: versa.ui.ChannelSelect
+.. attributetable:: versacord.ui.ChannelSelect
 
-.. autoclass:: versa.ui.ChannelSelect
+.. autoclass:: versacord.ui.ChannelSelect
     :members:
     :inherited-members:
 
-.. autofunction:: versa.ui.channel_select
+.. autofunction:: versacord.ui.channel_select
 
-.. autoclass:: versa.ui.ChannelSelectValues
+.. autoclass:: versacord.ui.ChannelSelectValues
     :members:
 
 Application Commands
@@ -4901,8 +4901,8 @@ Slash Options
       - Allows compatible annotations to be typehinted together. Channel types in a union will allow the slash option
         to be any of them.
     * - :data:`~typing.Annotated` [<type1>, <type2>, ..., <typeN>]
-      - Makes your IDE see <type1> as the expected type, but Versa Framework will attempt to use <typeN> as the option type.
-        If <typeN> isn't a valid option type, Versa Framework will work backwards towards <type2> until it finds a type that
+      - Makes your IDE see <type1> as the expected type, but versacord Framework will attempt to use <typeN> as the option type.
+        If <typeN> isn't a valid option type, versacord Framework will work backwards towards <type2> until it finds a type that
         can be used as a valid option type.
     * - :class:`Range` [[type1 | ``...``], <type2 | ``...``>]
       - Makes a range of values set in :attr:`SlashOption.min_value` and :attr:`SlashOption.max_value`.
@@ -5016,9 +5016,9 @@ The following exceptions are thrown by the library.
 
 .. autoexception:: InteractionResponded
 
-.. autoexception:: versa.opus.OpusError
+.. autoexception:: versacord.opus.OpusError
 
-.. autoexception:: versa.opus.OpusNotLoaded
+.. autoexception:: versacord.opus.OpusNotLoaded
 
 .. autoexception:: ApplicationError
 

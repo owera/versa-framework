@@ -34,7 +34,7 @@ repos:
         args: ["--profile", "black", "--extend-skip", "examples"]
         name: Running isort in all files.
       - id: isort
-        args: ["--profile", "black", "--thirdparty", "versa"]
+        args: ["--profile", "black", "--thirdparty", "versacord"]
         name: Running isort in examples.
         files: ^examples/
 

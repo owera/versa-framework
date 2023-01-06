@@ -1,8 +1,8 @@
 import asyncio
 
-import versa
+import versacord
 import youtube_dl
-from versa.ext import commands
+from versacord.ext import commands
 
 # Suppress noise about console usage from errors
 youtube_dl.utils.bug_reports_message = lambda: ""
@@ -27,7 +27,7 @@ ffmpeg_options = {"options": "-vn"}
 ytdl = youtube_dl.YoutubeDL(ytdl_format_options)
 
 
-class YTDLSource(versa.PCMVolumeTransformer):
+class YTDLSource(versacord.PCMVolumeTransformer):
     def __init__(self, source, *, data, volume=0.5):
         super().__init__(source, volume)
 
@@ -46,7 +46,7 @@ class YTDLSource(versa.PCMVolumeTransformer):
             data = data["entries"][0]
 
         filename = data["url"] if stream else ytdl.prepare_filename(data)
-        return cls(versa.FFmpegPCMAudio(filename, **ffmpeg_options), data=data)
+        return cls(versacord.FFmpegPCMAudio(filename, **ffmpeg_options), data=data)
 
 
 class Music(commands.Cog):
@@ -54,7 +54,7 @@ class Music(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def join(self, ctx, *, channel: versa.VoiceChannel):
+    async def join(self, ctx, *, channel: versacord.VoiceChannel):
         """Joins a voice channel"""
 
         if ctx.voice_client is not None:
@@ -66,7 +66,7 @@ class Music(commands.Cog):
     async def play(self, ctx, *, query):
         """Plays a file from the local filesystem"""
 
-        source = versa.PCMVolumeTransformer(versa.FFmpegPCMAudio(query))
+        source = versacord.PCMVolumeTransformer(versacord.FFmpegPCMAudio(query))
         ctx.voice_client.play(source, after=lambda e: print(f"Player error: {e}") if e else None)
 
         await ctx.send(f"Now playing: {query}")
@@ -125,7 +125,7 @@ class Music(commands.Cog):
             ctx.voice_client.stop()
 
 
-intents = versa.Intents.default()
+intents = versacord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(
     command_prefix="$", description="Relatively simple music bot example", intents=intents

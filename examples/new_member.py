@@ -1,6 +1,6 @@
 # This example requires the 'members' privileged intent
-import versa
-from versa.ext import commands
+import versacord
+from versacord.ext import commands
 
 
 class Bot(commands.Bot):
@@ -14,7 +14,7 @@ class Bot(commands.Bot):
             await guild.system_channel.send(to_send)
 
 
-intents = versa.Intents.default()
+intents = versacord.Intents.default()
 intents.members = True
 intents.message_content = True
 

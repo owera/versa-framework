@@ -16,9 +16,9 @@ body:
       options:
         - The core library
         - Application commands
-        - versa.ext.commands
-        - versa.ext.tasks
-        - versa.ext.application_checks
+        - versacord.ext.commands
+        - versacord.ext.tasks
+        - versacord.ext.application_checks
         - The documentation
     validations:
       required: true

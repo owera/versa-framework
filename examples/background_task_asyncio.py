@@ -1,6 +1,6 @@
 import asyncio
 
-from versa.ext import commands
+from versacord.ext import commands
 
 
 class Bot(commands.Bot):

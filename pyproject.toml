@@ -14,12 +14,12 @@ filter_files = true
 
 [tool.taskipy.tasks]
 black = { cmd = "task lint black", help = "Run black" }
-docs = { cmd = "cd docs && sphinx-autobuild . _build/html --ignore _build --watch ../versa --port 8069", help = "Build the documentation on an autoreloading server."}
+docs = { cmd = "cd docs && sphinx-autobuild . _build/html --ignore _build --watch ../versacord --port 8069", help = "Build the documentation on an autoreloading server."}
 isort = { cmd = "task lint isort", help = "Run isort" }
 lint = { cmd = "pre-commit run --all-files", help = "Check all files for linting errors" }
 precommit = { cmd = "pre-commit install --install-hooks", help = "Install the precommit hook" }
 pyright = { cmd = "dotenv -f task.env run -- python -m pyright", help = "Run pyright" }
-slotscheck = { cmd = "python -m slotscheck --verbose -m versa", help = "Run slotscheck" }
+slotscheck = { cmd = "python -m slotscheck --verbose -m versacord", help = "Run slotscheck" }
 
 
 [tool.slotscheck]
@@ -28,7 +28,7 @@ require-superclass = true
 require-subclass = false
 exclude-modules = '''
 (
-    ^versa\.types\.
+    ^versacord\.types\.
 )
 '''
 
@@ -36,7 +36,7 @@ exclude-modules = '''
 [tool.pyright]
 typeCheckingMode = "basic"
 include = [  # TODO: add examples back once app cmd is fixed
-    "versa",
+    "versacord",
     "docs",
     "*.py",
 ]

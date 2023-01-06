@@ -1,6 +1,6 @@
 :orphan:
 
-.. currentmodule:: versa
+.. currentmodule:: versacord
 
 .. _migrating-to-async:
 
@@ -175,9 +175,9 @@ After:
 
 .. code-block:: python3
 
-    server.region == versa.ServerRegion.us_west
-    member.status = versa.Status.online
-    channel.type == versa.ChannelType.text
+    server.region == versacord.ServerRegion.us_west
+    member.status = versacord.Status.online
+    channel.type == versacord.ChannelType.text
 
 The main reason for this change was to reduce the use of finicky strings in the API as this
 could give users a false sense of power. More information can be found on the :ref:`discord-api-enums` page.
@@ -270,7 +270,7 @@ in the function signature.
 Running the Client
 ------------------
 
-In earlier versions of versa, ``client.run()`` was a blocking call to the main thread
+In earlier versions of versacord, ``client.run()`` was a blocking call to the main thread
 that called it. In v0.10.0 it is still a blocking call but it handles the event loop for you.
 However, in order to do that you must pass in your credentials to :meth:`Client.run`.
 
@@ -300,10 +300,10 @@ event loop then doing so is quite straightforward:
 
 .. code-block:: python3
 
-    import versa
+    import versacord
     import asyncio
 
-    client = versa.Client()
+    client = versacord.Client()
 
     @asyncio.coroutine
     def main_task():

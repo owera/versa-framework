@@ -36,7 +36,7 @@ Scorer = {
         // only inflate the score of things that are actual API reference things
         const [, title, , , score] = result;
 
-        if (pattern !== null && title.startsWith('versa.')) {
+        if (pattern !== null && title.startsWith('versacord.')) {
             let _score = __score(title, pattern);
             if (_score === Number.MAX_VALUE) {
                 return score;

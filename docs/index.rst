@@ -1,15 +1,15 @@
-.. versa documentation master file, created by
+.. versacord documentation master file, created by
    sphinx-quickstart on Fri Aug 21 05:43:30 2015.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Versa Framework
+Welcome to versacord Framework
 ===================
 
 .. image:: /images/snake.svg
 .. image:: /images/snake_dark.svg
 
-Versa Framework is a modern, easy-to-use, feature-rich, and async-ready API wrapper
+versacord Framework is a modern, easy-to-use, feature-rich, and async-ready API wrapper
 for Discord, forked from discord.py.
 
 **Features:**
@@ -26,8 +26,8 @@ Getting started
 Is this your first time using the library? This is the place to get started!
 
 - **First steps:** :doc:`intro` | :doc:`quickstart` | :doc:`logging`
-- **Working with Versa Framework:** :doc:`discord` | :doc:`intents`
-- **Migrating from discord.py**: :ref:`Migrating to versa <migrating_versa>`
+- **Working with versacord Framework:** :doc:`discord` | :doc:`intents`
+- **Migrating from discord.py**: :ref:`Migrating to versacord <migrating_versacord>`
 - **Examples:** Many examples are available in the :resource:`repository <examples>`.
 
 Getting help
@@ -62,9 +62,9 @@ These pages go into great detail about everything the API can do.
   :maxdepth: 1
 
   api
-  versa.ext.commands API Reference <ext/commands/api.rst>
-  versa.ext.tasks API Reference <ext/tasks/index.rst>
-  versa.ext.application_checks API Reference <ext/application_checks/index.rst>
+  versacord.ext.commands API Reference <ext/commands/api.rst>
+  versacord.ext.tasks API Reference <ext/tasks/index.rst>
+  versacord.ext.application_checks API Reference <ext/application_checks/index.rst>
 
 Meta
 ----
@@ -79,4 +79,4 @@ If you're looking for something related to the project itself, it's here.
   interactions
   migrating
   migrating_2
-  migrating_to_versa
+  migrating_to_versacord

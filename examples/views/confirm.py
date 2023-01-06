@@ -1,9 +1,9 @@
-import versa
-from versa.ext import commands
+import versacord
+from versacord.ext import commands
 
 
 # Define a simple View that gives us a confirmation menu
-class Confirm(versa.ui.View):
+class Confirm(versacord.ui.View):
     def __init__(self):
         super().__init__()
         self.value = None
@@ -11,15 +11,15 @@ class Confirm(versa.ui.View):
     # When the confirm button is pressed, set the inner value to `True` and
     # stop the View from listening to more input.
     # We also send the user an ephemeral message that we're confirming their choice.
-    @versa.ui.button(label="Confirm", style=versa.ButtonStyle.green)
-    async def confirm(self, button: versa.ui.Button, interaction: versa.Interaction):
+    @versacord.ui.button(label="Confirm", style=versacord.ButtonStyle.green)
+    async def confirm(self, button: versacord.ui.Button, interaction: versacord.Interaction):
         await interaction.response.send_message("Confirming", ephemeral=True)
         self.value = True
         self.stop()
 
     # This one is similar to the confirmation button except sets the inner value to `False`
-    @versa.ui.button(label="Cancel", style=versa.ButtonStyle.grey)
-    async def cancel(self, button: versa.ui.Button, interaction: versa.Interaction):
+    @versacord.ui.button(label="Cancel", style=versacord.ButtonStyle.grey)
+    async def cancel(self, button: versacord.ui.Button, interaction: versacord.Interaction):
         await interaction.response.send_message("Cancelling", ephemeral=True)
         self.value = False
         self.stop()

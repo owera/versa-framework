@@ -1,12 +1,12 @@
 :orphan:
 
-.. currentmodule:: versa
+.. currentmodule:: versacord
 .. _faq:
 
 Frequently Asked Questions
 ==========================
 
-This is a list of Frequently Asked Questions regarding the use of ``versa`` and its extension modules. Feel free to suggest a
+This is a list of Frequently Asked Questions regarding the use of ``versacord`` and its extension modules. Feel free to suggest a
 new question or submit one via pull requests.
 
 .. contents:: Questions
@@ -105,11 +105,11 @@ For memory optimisation purposes, some activities are offered in slimmed-down ve
 
 Putting both of these pieces of info together, you get the following: ::
 
-    client = versa.Client(activity=versa.Game(name='my game'))
+    client = versacord.Client(activity=versacord.Game(name='my game'))
 
     # or, for watching:
-    activity = versa.Activity(name='my activity', type=versa.ActivityType.watching)
-    client = versa.Client(activity=activity)
+    activity = versacord.Activity(name='my activity', type=versacord.ActivityType.watching)
+    client = versacord.Client(activity=activity)
 
 How do I send a message to a specific channel?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -150,18 +150,18 @@ to pass to Discord when uploading.
 
 If you want to upload an image it's as simple as: ::
 
-    await channel.send(file=versa.File('my_file.png'))
+    await channel.send(file=versacord.File('my_file.png'))
 
 If you have a file-like object you can do as follows: ::
 
     with open('my_file.png', 'rb') as fp:
-        await channel.send(file=versa.File(fp, 'new_filename.png'))
+        await channel.send(file=versacord.File(fp, 'new_filename.png'))
 
 To upload multiple files, you can use the ``files`` keyword argument instead of ``file``\: ::
 
     my_files = [
-        versa.File('result.zip'),
-        versa.File('teaser_graph.png'),
+        versacord.File('result.zip'),
+        versacord.File('teaser_graph.png'),
     ]
     await channel.send(files=my_files)
 
@@ -178,7 +178,7 @@ and then pass an :class:`io.BytesIO` instance to :class:`File` like so:
             if resp.status != 200:
                 return await channel.send('Could not download file...')
             data = io.BytesIO(await resp.read())
-            await channel.send(file=versa.File(data, 'cool_image.png'))
+            await channel.send(file=versacord.File(data, 'cool_image.png'))
 
 
 How can I add a reaction to a message?
@@ -216,7 +216,7 @@ Quick example: ::
     await message.add_reaction(emoji)
 
     # no ID, do a lookup
-    emoji = versa.utils.get(guild.emojis, name='LUL')
+    emoji = versacord.utils.get(guild.emojis, name='LUL')
     if emoji:
         await message.add_reaction(emoji)
 
@@ -244,11 +244,11 @@ this together we can do the following: ::
         fut = asyncio.run_coroutine_threadsafe(coro, client.loop)
         try:
             fut.result()
-        except versa.Forbidden:
+        except versacord.Forbidden:
             # Missing permissions to send message to that channel
             pass
 
-    voice.play(versa.FFmpegPCMAudio(url), after=my_after)
+    voice.play(versacord.FFmpegPCMAudio(url), after=my_after)
 
 How do I run something in the background?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -286,12 +286,12 @@ specific models.
 Quick example: ::
 
     # find a guild by name
-    guild = versa.utils.get(client.guilds, name='My Server')
+    guild = versacord.utils.get(client.guilds, name='My Server')
 
     # make sure to check if it's found
     if guild is not None:
         # find a channel by name
-        channel = versa.utils.get(guild.text_channels, name='cool-channel')
+        channel = versacord.utils.get(guild.text_channels, name='cool-channel')
 
 How do I make a web request?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -321,8 +321,8 @@ where ``image.png`` is the filename of the image you will send.
 
 Quick example: ::
 
-    file = versa.File("path/to/my/image.png", filename="image.png")
-    embed = versa.Embed()
+    file = versacord.File("path/to/my/image.png", filename="image.png")
+    embed = versacord.Embed()
     embed.set_image(url="attachment://image.png")
     await channel.send(file=file, embed=embed)
 
@@ -339,7 +339,7 @@ This is currently a Discord limitation.
 Commands Extension
 ------------------
 
-Questions regarding ``versa.ext.commands`` belong here.
+Questions regarding ``versacord.ext.commands`` belong here.
 
 Why does ``on_message`` make my commands stop working?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

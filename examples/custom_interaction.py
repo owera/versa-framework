@@ -1,10 +1,10 @@
-import versa
+import versacord
 
 
-class MyInteraction(versa.Interaction):
+class MyInteraction(versacord.Interaction):
     async def send_embed(self, *, title: str, description: str):
         """Easily send a basic embed."""
-        embed: versa.Embed = versa.Embed(
+        embed: versacord.Embed = versacord.Embed(
             title=title,
             description=description,
         )
@@ -12,8 +12,8 @@ class MyInteraction(versa.Interaction):
         await self.send(embed=embed)
 
 
-class Client(versa.Client):
-    def get_interaction(self, data, *, cls=versa.Interaction):
+class Client(versacord.Client):
+    def get_interaction(self, data, *, cls=versacord.Interaction):
         # when you override this method, you pass your new Interaction
         # subclass to the super() method, which tells the bot to
         # use the new MyInteraction class

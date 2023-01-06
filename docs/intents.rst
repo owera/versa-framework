@@ -1,6 +1,6 @@
 :orphan:
 
-.. currentmodule:: versa
+.. currentmodule:: versacord
 .. versionadded:: 1.5
 .. _intents_primer:
 
@@ -23,15 +23,15 @@ For example, if you want a bot that functions without spammy events like presenc
 .. code-block:: python3
    :emphasize-lines: 7,9,10
 
-    import versa
-    intents = versa.Intents.default()
+    import versacord
+    intents = versacord.Intents.default()
     intents.typing = False
     intents.presences = False
 
     # Somewhere else:
-    # client = versa.Client(intents=intents)
+    # client = versacord.Client(intents=intents)
     # or
-    # from versa.ext import commands
+    # from versacord.ext import commands
     # bot = commands.Bot(command_prefix='!', intents=intents)
 
 Note that this doesn't enable :attr:`Intents.members` since it's a privileged intent.
@@ -41,15 +41,15 @@ Another example showing a bot that only deals with messages and guild informatio
 .. code-block:: python3
    :emphasize-lines: 7,9,10
 
-    import versa
-    intents = versa.Intents(messages=True, guilds=True)
+    import versacord
+    intents = versacord.Intents(messages=True, guilds=True)
     # If you also want reaction events enable the following:
     # intents.reactions = True
 
     # Somewhere else:
-    # client = versa.Client(intents=intents)
+    # client = versacord.Client(intents=intents)
     # or
-    # from versa.ext import commands
+    # from versacord.ext import commands
     # bot = commands.Bot(command_prefix='!', intents=intents)
 
 .. _privileged_intents:
@@ -174,14 +174,14 @@ For example:
 .. code-block:: python3
    :emphasize-lines: 3,6,8,9
 
-    import versa
-    intents = versa.Intents.default()
+    import versacord
+    intents = versacord.Intents.default()
     intents.members = True
 
     # Somewhere else:
-    # client = versa.Client(intents=intents)
+    # client = versacord.Client(intents=intents)
     # or
-    # from versa.ext import commands
+    # from versacord.ext import commands
     # bot = commands.Bot(command_prefix='!', intents=intents)
 
 What happened to my prefix commands?
@@ -197,14 +197,14 @@ For example:
 .. code-block:: python3
    :emphasize-lines: 3,6,8,9
 
-    import versa
-    intents = versa.Intents.default()
+    import versacord
+    intents = versacord.Intents.default()
     intents.message_content = True
 
     # Somewhere else:
-    # client = versa.Client(intents=intents)
+    # client = versacord.Client(intents=intents)
     # or
-    # from versa.ext import commands
+    # from versacord.ext import commands
     # bot = commands.Bot(command_prefix='!', intents=intents)
 
 Why does ``on_ready`` take so long to fire?

@@ -1,7 +1,7 @@
 import asyncio
 
-import versa
-from versa.ext import commands
+import versacord
+from versacord.ext import commands
 
 
 class Bot(commands.Bot):
@@ -13,7 +13,7 @@ class Bot(commands.Bot):
         await before.channel.send(msg)
 
 
-intents = versa.Intents.default()
+intents = versacord.Intents.default()
 intents.message_content = True
 bot = Bot(command_prefix="$", intents=intents)
 

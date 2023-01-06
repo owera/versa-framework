@@ -6,10 +6,10 @@
 
 import random
 
-import versa
-from versa.ext import commands
+import versacord
+from versacord.ext import commands
 
-intents = versa.Intents.default()
+intents = versacord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="$", intents=intents)
 

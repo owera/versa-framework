@@ -1,22 +1,22 @@
-import versa
-from versa.ext import commands
+import versacord
+from versacord.ext import commands
 
 
 # Defines a custom Select containing colour options
 # that the user can choose. The callback function
 # of this class is called when the user changes their choice
-class Dropdown(versa.ui.Select):
+class Dropdown(versacord.ui.Select):
     def __init__(self):
 
         # Set the options that will be presented inside the dropdown
         options = [
-            versa.SelectOption(
+            versacord.SelectOption(
                 label="Red", description="Your favourite colour is red", emoji="🟥"
             ),
-            versa.SelectOption(
+            versacord.SelectOption(
                 label="Green", description="Your favourite colour is green", emoji="🟩"
             ),
-            versa.SelectOption(
+            versacord.SelectOption(
                 label="Blue", description="Your favourite colour is blue", emoji="🟦"
             ),
         ]
@@ -31,7 +31,7 @@ class Dropdown(versa.ui.Select):
             options=options,
         )
 
-    async def callback(self, interaction: versa.Interaction):
+    async def callback(self, interaction: versacord.Interaction):
         # Use the interaction object to send a response message containing
         # the user's favourite colour or choice. The self object refers to the
         # Select object, and the values attribute gets a list of the user's
@@ -39,7 +39,7 @@ class Dropdown(versa.ui.Select):
         await interaction.response.send_message(f"Your favourite colour is {self.values[0]}")
 
 
-class DropdownView(versa.ui.View):
+class DropdownView(versacord.ui.View):
     def __init__(self):
         super().__init__()
 

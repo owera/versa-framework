@@ -1,4 +1,4 @@
-.. currentmodule:: versa
+.. currentmodule:: versacord
 
 .. |commands| replace:: [:ref:`ext.commands <discord_ext_commands>`]
 .. |tasks| replace:: [:ref:`ext.tasks <discord_ext_tasks>`]
@@ -35,7 +35,7 @@ This is a bugfix release to resolve an import error.
 Bug Fixes
 ~~~~~~~~~
 
-- Fix an import error when importing ``versa.ui``.
+- Fix an import error when importing ``versacord.ui``.
 
 .. _vp2p3p0:
 
@@ -81,7 +81,7 @@ New Features
     - :func:`ui.mentionable_select`
     - :class:`ui.ChannelSelect`
     - :func:`ui.channel_select`
-- |commands| Add :meth:`Bot.process_with_str <versa.ext.commands.Bot.process_with_str>` (:issue:`24`, :issue:`823`).
+- |commands| Add :meth:`Bot.process_with_str <versacord.ext.commands.Bot.process_with_str>` (:issue:`24`, :issue:`823`).
 
 Bug Fixes
 ~~~~~~~~~
@@ -91,9 +91,9 @@ Bug Fixes
 - Fix an error when a user does not provide integer input to autocomplete (Discord bug) (:issue:`835`).
 - Handle timeouts within :meth:`abc.GuildChannel.permissions_for` (:issue:`852`, :issue:`858`).
 - Fix issues with support for Python 3.11 (:issue:`866`, :issue:`867`).
-- Fix import errors with `versa.types.checks` (:issue:`888`).
+- Fix import errors with `versacord.types.checks` (:issue:`888`).
 - Fix pyright strict issues with :meth:`ui.View.add_item` (:issue:`769`, :issue:`806`).
-- Add `py.typed` files to `versa.ext.*` packages to tell type checkers that types are inline (:issue:`770`, :issue:`822`).
+- Add `py.typed` files to `versacord.ext.*` packages to tell type checkers that types are inline (:issue:`770`, :issue:`822`).
 - Fix pyright strict issues with :func:`abc.Messageable.send` (:issue:`771`, :issue:`805`).
 
 .. _vp2p2p0:
@@ -270,7 +270,7 @@ v2.0.0
 The changeset for this version are too big to be listed here, for more information please
 see :ref:`the migrating page <migrating_2_0>`. Since the original discord.py repro ended
 its work this is the point where our fork comes in place. Please see
-:ref:`the migrating page <migrating_versa>` for more informations.
+:ref:`the migrating page <migrating_versacord>` for more informations.
 
 .. _vp1p7p3:
 

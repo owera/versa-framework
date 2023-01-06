@@ -1,4 +1,4 @@
-from versa.ext import commands, tasks
+from versacord.ext import commands, tasks
 
 
 class Bot(commands.Bot):

@@ -1,13 +1,13 @@
 import re
 
-from setuptools import setup
+from setuptools import Extension, setup
 
 requirements = []
 with open("requirements.txt") as f:
     requirements = f.read().splitlines()
 
 version = ""
-with open("versa/__init__.py") as f:
+with open("versacord/__init__.py") as f:
     match = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE)
     if match is None or match.group(1) is None:
         raise RuntimeError("version is not set")
@@ -47,20 +47,20 @@ extras_require = {
         "sphinx==5.2.3",
         "sphinxcontrib_trio==1.1.2",
         "sphinxcontrib-websupport",
-        "typing_extensions>=4.2.0, <5",
+        "typing_extensions>=4.2.0",
     ],
     "speed": ["orjson>=3.5.4", "aiohttp[speedups]"],
 }
 
 packages = [
-    "versa",
-    "versa.types",
-    "versa.ui",
-    "versa.webhook",
-    "versa.ext.application_checks",
-    "versa.ext.commands",
-    "versa.ext.tasks",
-    "versa.ui.select",
+    "versacord",
+    "versacord.types",
+    "versacord.ui",
+    "versacord.webhook",
+    "versacord.ext.application_checks",
+    "versacord.ext.commands",
+    "versacord.ext.tasks",
+    "versacord.ui.select",
     # Compat
     "discord",
     "discord.types",
@@ -71,17 +71,18 @@ packages = [
 ]
 
 setup(
-    name="versa",
-    author="Versa Developers & Rapptz",
+    name="versacord",
+    author="versacord Developers & Rapptz",
     url="https://github.com/owera/versa-framework",
     project_urls={
-        "Documentation": "https://docs.versa.dev/",
+        "Documentation": "https://docs.versacord.dev/",
         "Issue tracker": "https://github.com/owera/versa-framework/issues",
     },
+    download_url= "https://github.com/owera/versa-framework/archive/refs/tags/v1.0.0.tar.gz",
     version=version,
     packages=packages,
     license="MIT",
-    description="A Python wrapper for the Discord API forked from discord.py",
+    description="A easyly to use  Python framework forked from Discord API | Versacord Framework",
     long_description=readme,
     long_description_content_type="text/x-rst",
     include_package_data=True,

@@ -1,15 +1,15 @@
 # This example requires the 'members' privileged intents
 import random
 
-import versa
-from versa.ext import commands
+import versacord
+from versacord.ext import commands
 
-description = """An example bot to showcase the versa.ext.commands extension
+description = """An example bot to showcase the versacord.ext.commands extension
 module.
 
 There are a number of utility commands being showcased here."""
 
-intents = versa.Intents.default()
+intents = versacord.Intents.default()
 intents.members = True
 intents.message_content = True
 
@@ -54,7 +54,7 @@ async def repeat(ctx, times: int, content="repeating..."):
 
 
 @bot.command()
-async def joined(ctx, member: versa.Member):
+async def joined(ctx, member: versacord.Member):
     """Says when a member joined."""
     await ctx.send(f"{member.name} joined in {member.joined_at}")
 

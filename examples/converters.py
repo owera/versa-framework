@@ -1,10 +1,10 @@
 # This example requires the 'members' privileged intent to use the Member converter.
 import typing
 
-import versa
-from versa.ext import commands
+import versacord
+from versacord.ext import commands
 
-intents = versa.Intents.default()
+intents = versacord.Intents.default()
 intents.members = True
 intents.message_content = True
 
@@ -12,19 +12,19 @@ bot = commands.Bot(command_prefix="$", intents=intents)
 
 
 @bot.command()
-async def userinfo(ctx, user: versa.User):
+async def userinfo(ctx, user: versacord.User):
     # In the command signature above, you can see that the `user`
-    # parameter is typehinted to `versa.User`. This means that
+    # parameter is typehinted to `versacord.User`. This means that
     # during command invocation we will attempt to convert
-    # the value passed as `user` to a `versa.User` instance.
-    # The documentation notes what can be converted, in the case of `versa.User`
+    # the value passed as `user` to a `versacord.User` instance.
+    # The documentation notes what can be converted, in the case of `versacord.User`
     # you pass an ID, mention or username (discrim optional)
     # E.g. 80088516616269824, @Danny or Danny#0007
 
     # NOTE: typehinting acts as a converter within the `commands` framework only.
     # In standard Python, it is use for documentation and IDE assistance purposes.
 
-    # If the conversion is successful, we will have a `versa.User` instance
+    # If the conversion is successful, we will have a `versacord.User` instance
     # and can do the following:
     user_id = user.id
     username = user.name
@@ -45,7 +45,7 @@ class ChannelOrMemberConverter(commands.Converter):
     async def convert(self, ctx, argument: str):
         # In this example we have made a custom converter.
         # This checks if an input is convertible to a
-        # `versa.Member` or `versa.TextChannel` instance from the
+        # `versacord.Member` or `versacord.TextChannel` instance from the
         # input the user has given us using the pre-existing converters
         # that the library provides.
 
@@ -86,20 +86,20 @@ async def notify(ctx, target: ChannelOrMemberConverter):
 
 
 @bot.command()
-async def ignore(ctx, target: typing.Union[versa.Member, versa.TextChannel]):
+async def ignore(ctx, target: typing.Union[versacord.Member, versacord.TextChannel]):
     # This command signature utilises the `typing.Union` typehint.
     # The `commands` framework attempts a conversion of each type in this Union *in order*.
-    # So, it will attempt to convert whatever is passed to `target` to a `versa.Member` instance.
-    # If that fails, it will attempt to convert it to a `versa.TextChannel` instance.
-    # See: https://versa.readthedocs.io/en/latest/ext/commands/commands.html#typing-union
+    # So, it will attempt to convert whatever is passed to `target` to a `versacord.Member` instance.
+    # If that fails, it will attempt to convert it to a `versacord.TextChannel` instance.
+    # See: https://versacord.readthedocs.io/en/latest/ext/commands/commands.html#typing-union
     # NOTE: If a Union typehint converter fails it will raise `commands.BadUnionArgument`
     # instead of `commands.BadArgument`.
 
     # To check the resulting type, `isinstance` is used
-    if isinstance(target, versa.Member):
+    if isinstance(target, versacord.Member):
         await ctx.send(f"Member found: {target.mention}, adding them to the ignore list.")
     elif isinstance(
-        target, versa.TextChannel
+        target, versacord.TextChannel
     ):  # this could be an `else` but for completeness' sake.
         await ctx.send(f"Channel found: {target.mention}, adding it to the ignore list.")
 
@@ -109,7 +109,7 @@ async def ignore(ctx, target: typing.Union[versa.Member, versa.TextChannel]):
 async def multiply(ctx, number: int, maybe: bool):
     # We want an `int` and a `bool` parameter here.
     # `bool` is a slightly special case, as shown here:
-    # See: https://versa.readthedocs.io/en/latest/ext/commands/commands.html#bool
+    # See: https://versacord.readthedocs.io/en/latest/ext/commands/commands.html#bool
     if maybe:
         return await ctx.send(number * 2)
     await ctx.send(number * 5)

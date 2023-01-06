@@ -98,4 +98,4 @@ If you want to invite your bot, you must create an invite URL for it.
     The person adding the bot needs the "Manage Server" permission to do so.
 
 If you want to generate this URL dynamically at run-time inside your bot and using the
-:class:`versa.Permissions` interface, you can use :func:`versa.utils.oauth_url`.
+:class:`versacord.Permissions` interface, you can use :func:`versacord.utils.oauth_url`.

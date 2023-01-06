@@ -1,6 +1,6 @@
 # This example requires the 'members' privileged intents
-import versa
-from versa.ext import commands
+import versacord
+from versacord.ext import commands
 
 
 class Bot(commands.Bot):
@@ -9,14 +9,14 @@ class Bot(commands.Bot):
 
         self.role_message_id = 0  # ID of the message that can be reacted to to add/remove a role.
         self.emoji_to_role = {
-            versa.PartialEmoji(name="🔴"): 0,  # ID of the role associated with unicode emoji '🔴'.
-            versa.PartialEmoji(name="🟡"): 0,  # ID of the role associated with unicode emoji '🟡'.
-            versa.PartialEmoji(
+            versacord.PartialEmoji(name="🔴"): 0,  # ID of the role associated with unicode emoji '🔴'.
+            versacord.PartialEmoji(name="🟡"): 0,  # ID of the role associated with unicode emoji '🟡'.
+            versacord.PartialEmoji(
                 name="green", id=0
             ): 0,  # ID of the role associated with a partial emoji's ID.
         }
 
-    async def on_raw_reaction_add(self, payload: versa.RawReactionActionEvent):
+    async def on_raw_reaction_add(self, payload: versacord.RawReactionActionEvent):
         """Gives a role based on a reaction emoji."""
         # Make sure that the message the user is reacting to is the one we care about.
         if payload.message_id != self.role_message_id:
@@ -41,11 +41,11 @@ class Bot(commands.Bot):
         try:
             # Finally, add the role.
             await payload.member.add_roles(role)
-        except versa.HTTPException:
+        except versacord.HTTPException:
             # If we want to do something in case of errors we'd do it here.
             pass
 
-    async def on_raw_reaction_remove(self, payload: versa.RawReactionActionEvent):
+    async def on_raw_reaction_remove(self, payload: versacord.RawReactionActionEvent):
         """Removes a role based on a reaction emoji."""
         # Make sure that the message the user is reacting to is the one we care about.
         if payload.message_id != self.role_message_id:
@@ -77,12 +77,12 @@ class Bot(commands.Bot):
         try:
             # Finally, remove the role.
             await member.remove_roles(role)
-        except versa.HTTPException:
+        except versacord.HTTPException:
             # If we want to do something in case of errors we'd do it here.
             pass
 
 
-intents = versa.Intents.default()
+intents = versacord.Intents.default()
 intents.members = True
 intents.message_content = True
 

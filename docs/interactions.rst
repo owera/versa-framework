@@ -1,6 +1,6 @@
 :orphan:
 
-.. currentmodule:: versa
+.. currentmodule:: versacord
 
 .. _interactions:
 
@@ -15,11 +15,11 @@ The following example is a simple ping command using slash commands:
 .. code-block:: python3
 
     @bot.slash_command(guild_ids=[TESTING_GUILD_ID])
-    async def ping(interaction: versa.Interaction):
+    async def ping(interaction: versacord.Interaction):
         """Simple command that responds with Pong!"""
         await interaction.response.send_message("Pong!")
 
-The way it works is by using the :meth:`~versa.ext.commands.Bot.slash_command` decorator to add a slash command for the bot to register with Discord.
+The way it works is by using the :meth:`~versacord.ext.commands.Bot.slash_command` decorator to add a slash command for the bot to register with Discord.
 
 ``guild_ids`` is used to limit the guilds that the slash command is available to. This is useful for testing as global slash commands can take up to an hour to register.
 
@@ -35,7 +35,7 @@ Below is an example that takes a single argument, ``arg``, and repeats it back t
 .. code-block:: python3
 
     @bot.slash_command(guild_ids=[TESTING_GUILD_ID])
-    async def echo(interaction: versa.Interaction, arg: str):
+    async def echo(interaction: versacord.Interaction, arg: str):
         """Repeats your message that you send as an argument
 
         Parameters
@@ -49,7 +49,7 @@ Below is an example that takes a single argument, ``arg``, and repeats it back t
 
 The option can be type-hinted with :class:`int`, :class:`float`, or :class:`bool` to change the type of the argument.
 
-You can also set ``required=False`` in a :class:`~versa.SlashOption` or set a default value to make the argument optional.
+You can also set ``required=False`` in a :class:`~versacord.SlashOption` or set a default value to make the argument optional.
 
 .. code-block:: python3
 
@@ -57,7 +57,7 @@ You can also set ``required=False`` in a :class:`~versa.SlashOption` or set a de
 
     @bot.slash_command(guild_ids=[TESTING_GUILD_ID])
     async def echo_number(
-        interaction: versa.Interaction,
+        interaction: versacord.Interaction,
         number: Optional[int] = SlashOption(required=False)
     ):
         """Repeats your number that you send as an argument
@@ -79,13 +79,13 @@ Choices
 
 You can also use choices to make fields that only accept certain values.
 
-The choices can be specified using ``choices`` in a :class:`~versa.SlashOption` which can be a list of choices or a mapping of choices to their values.
+The choices can be specified using ``choices`` in a :class:`~versacord.SlashOption` which can be a list of choices or a mapping of choices to their values.
 
 .. code-block:: python3
 
     @bot.slash_command(guild_ids=[TESTING_GUILD_ID])
     async def choose_a_number(
-        interaction: versa.Interaction,
+        interaction: versacord.Interaction,
         number: int = SlashOption(
             name="picker",
             choices={"one": 1, "two": 2, "three": 3},
@@ -137,12 +137,12 @@ Subcommands of a base command can also have subcommands, but the subcommands of 
     │   └── subcommand
     └── subcommand
 
-As shown in the demonstration below you make a main slash command and build subcommands using the :meth:`~versa.ApplicationCommand.subcommand` decorator on it.
+As shown in the demonstration below you make a main slash command and build subcommands using the :meth:`~versacord.ApplicationCommand.subcommand` decorator on it.
 
 .. code-block:: python3
 
     @bot.slash_command(guild_ids=[TESTING_GUILD_ID])
-    async def main(interaction: versa.Interaction):
+    async def main(interaction: versacord.Interaction):
         """
         This is the main slash command that will be the prefix of all commands below.
         This will never get called since it has subcommands.
@@ -151,7 +151,7 @@ As shown in the demonstration below you make a main slash command and build subc
 
 
     @main.subcommand(description="Subcommand 1")
-    async def sub1(interaction: versa.Interaction):
+    async def sub1(interaction: versacord.Interaction):
         """
         This is a subcommand of the '/main' slash command.
         It will appear in the menu as '/main sub1'.
@@ -160,7 +160,7 @@ As shown in the demonstration below you make a main slash command and build subc
 
 
     @main.subcommand(description="Subcommand 2")
-    async def sub2(interaction: versa.Interaction):
+    async def sub2(interaction: versacord.Interaction):
         """
         This is another subcommand of the '/main' slash command.
         It will appear in the menu as '/main sub2'.
@@ -169,7 +169,7 @@ As shown in the demonstration below you make a main slash command and build subc
 
 
     @main.subcommand()
-    async def main_group(interaction: versa.Interaction):
+    async def main_group(interaction: versacord.Interaction):
         """
         This is a subcommand group of the '/main' slash command.
         All subcommands of this group will be prefixed with '/main main_group'.
@@ -179,7 +179,7 @@ As shown in the demonstration below you make a main slash command and build subc
 
 
     @main_group.subcommand(description="Subcommand group subcommand 1")
-    async def subsub1(interaction: versa.Interaction):
+    async def subsub1(interaction: versacord.Interaction):
         """
         This is a subcommand of the '/main main_group' subcommand group.
         It will appear in the menu as '/main main_group subsub1'.
@@ -188,7 +188,7 @@ As shown in the demonstration below you make a main slash command and build subc
 
 
     @main_group.subcommand(description="Subcommand group subcommand 2")
-    async def subsub2(interaction: versa.Interaction):
+    async def subsub2(interaction: versacord.Interaction):
         """
         This is another subcommand of the '/main main_group' subcommand group.
         It will appear in the menu as '/main main_group subsub2'.
@@ -209,7 +209,7 @@ Here is an example of a command that will say hi to a user that was right-clicke
 .. code-block:: python3
 
     @bot.user_command(guild_ids=[TESTING_GUILD_ID])
-    async def hello(interaction: versa.Interaction, member: versa.Member):
+    async def hello(interaction: versacord.Interaction, member: versacord.Member):
         """Says hi to a user that was right-clicked on"""
         await interaction.response.send_message(f"Hello {member}!")
 
@@ -221,7 +221,7 @@ Here is an example of a message command which sends the content of the right-cli
 .. code-block:: python3
 
     @bot.message_command(guild_ids=[TESTING_GUILD_ID])
-    async def say(interaction: versa.Interaction, message: versa.Message):
+    async def say(interaction: versacord.Interaction, message: versacord.Message):
         """Sends the content of the right-clicked message as an ephemeral response"""
         await interaction.response.send_message(message.content, ephemeral=True)
 
@@ -231,7 +231,7 @@ Deferred Response
 
 Discord expects you to respond in 3 seconds, you can extend that by deferring and then sending followup in the next 15 minutes.
 
-Responding to the interaction with :meth:`~versa.InteractionResponse.defer` will show the "bot is thinking" message to the user
+Responding to the interaction with :meth:`~versacord.InteractionResponse.defer` will show the "bot is thinking" message to the user
 until the followup response is sent.
 
 Note: by default the message will be public, but you can make it visible only to the user by setting the ``ephemeral`` parameter to ``True``.
@@ -239,7 +239,7 @@ Note: by default the message will be public, but you can make it visible only to
 .. code-block:: python3
 
     @bot.slash_command(guild_ids=[TESTING_GUILD_ID])
-    async def hi(interaction: versa.Interaction):
+    async def hi(interaction: versacord.Interaction):
         """Say hi to a user"""
         # defer the response, so we can take a long time to respond
         await interaction.response.defer()
@@ -260,18 +260,18 @@ Shown below is an example of a simple command running in a cog:
         def __init__(self):
             self.count = 0
 
-        @versa.slash_command(guild_ids=[TESTING_GUILD_ID])
-        async def slash_command_cog(self, interaction: versa.Interaction):
+        @versacord.slash_command(guild_ids=[TESTING_GUILD_ID])
+        async def slash_command_cog(self, interaction: versacord.Interaction):
             """This is a slash command in a cog"""
             await interaction.response.send_message("Hello I am a slash command in a cog!")
 
-Context menu commands can also be made in cogs using the :meth:`versa.user_command` or :meth:`versa.message_command` decorators.
+Context menu commands can also be made in cogs using the :meth:`versacord.user_command` or :meth:`versacord.message_command` decorators.
 
 
 Default Guild IDs
 -----------------
 
-If you would like for all of your application commands to have the same guild ids unless explicitly stated, then you can set the ``default_guild_ids`` keyword argument in :class:`~versa.Client`, :class:`~versa.ext.commands.Bot`, or :class:`~versa.ext.commands.AutoShardedBot`!
+If you would like for all of your application commands to have the same guild ids unless explicitly stated, then you can set the ``default_guild_ids`` keyword argument in :class:`~versacord.Client`, :class:`~versacord.ext.commands.Bot`, or :class:`~versacord.ext.commands.AutoShardedBot`!
 
 Here's an example of this:
 
@@ -280,9 +280,9 @@ Here's an example of this:
     bot = commands.Bot(..., default_guild_ids=[TESTING_GUILD_ID])
 
     @bot.slash_command()
-    async def bye(interaction: versa.Interaction):
+    async def bye(interaction: versacord.Interaction):
         await interaction.response.send_message(f"Goodbye {bot.default_guild_ids}!")
 
     @bot.slash_command(guild_ids=None)
-    async def bye_global(interaction: versa.Interaction):
+    async def bye_global(interaction: versacord.Interaction):
         await interaction.response.send_message("Goodbye everyone!")

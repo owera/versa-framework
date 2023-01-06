@@ -1,4 +1,4 @@
-.. currentmodule:: versa
+.. currentmodule:: versacord
 
 .. _ext_commands_extensions:
 
@@ -18,7 +18,7 @@ An example extension looks like this:
     :caption: hello.py
     :emphasize-lines: 7,8
 
-    from versa.ext import commands
+    from versacord.ext import commands
 
     @commands.command()
     async def hello(ctx):

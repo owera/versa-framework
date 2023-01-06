@@ -1,13 +1,13 @@
 import re
 
-from setuptools import setup
+from setuptools import Extension, setup
 
 requirements = []
 with open("requirements.txt") as f:
     requirements = f.read().splitlines()
 
 version = ""
-with open("versa/__init__.py") as f:
+with open("versacord/__init__.py") as f:
     match = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE)
     if match is None or match.group(1) is None:
         raise RuntimeError("version is not set")
@@ -49,29 +49,29 @@ extras_require = {
 }
 
 packages = [
-    "versa",
-    "versa.types",
-    "versa.ui",
-    "versa.ui.select",
-    "versa.webhook",
-    "versa.ext.application_checks",
-    "versa.ext.commands",
-    "versa.ext.slash_utils",
-    "versa.ext.tasks",
+    "versacord",
+    "versacord.types",
+    "versacord.ui",
+    "versacord.ui.select",
+    "versacord.webhook",
+    "versacord.ext.application_checks",
+    "versacord.ext.commands",
+    "versacord.ext.slash_utils",
+    "versacord.ext.tasks",
 ]
 
 setup(
-    name="versa-unaliased",
-    author="Versa Developers & Rapptz",
+    name="versacord-unaliased",
+    author="versacord Developers & Rapptz",
     url="https://github.com/owera/versa-framework",
     project_urls={
-        "Documentation": "https://versa.readthedocs.io/en/latest/",
+        "Documentation": "https://versacord.readthedocs.io/en/latest/",
         "Issue tracker": "https://github.com/owera/versa-framework/issues",
     },
     version=version,
     packages=packages,
     license="MIT",
-    description="A Python wrapper for the Discord API forked from discord.py (without the discord alias)",
+    description="A easyly to use  Python framework forked from Discord API | Versacord Framework (without the discord alias)",
     long_description=readme,
     long_description_content_type="text/x-rst",
     include_package_data=True,

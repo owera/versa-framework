@@ -1,12 +1,12 @@
 # SPDX-License-Identifier: MIT
 """Module to allow for backwards compatibility for existing code and extensions."""
 
-from versa import *
+from versacord import *
 
-__title__ = "versa framework"
-__author__ = "Versa Developers"
+__title__ = "versacord framework"
+__author__ = "versacord Developers"
 __license__ = "MIT"
-__copyright__ = "Copyright 022-present Versa Developers"
-__version__ = "2.4.0a"
+__copyright__ = "Copyright 022-present versacord Developers"
+__version__ = "1.0.0"
 
 __path__ = __import__("pkgutil").extend_path(__path__, __name__)

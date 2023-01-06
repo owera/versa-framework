@@ -1,9 +1,9 @@
 import typing
 
-import versa
-from versa.ext import commands
+import versacord
+from versacord.ext import commands
 
-intents = versa.Intents.default()
+intents = versacord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="$", description="Nothing to see here!", intents=intents)
 
@@ -20,8 +20,8 @@ def create_overwrites(ctx, *objects):
     """This is just a helper function that creates the overwrites for the
     voice/text channels.
 
-    A `versa.PermissionOverwrite` allows you to determine the permissions
-    of an object, whether it be a `versa.Role` or a `versa.Member`.
+    A `versacord.PermissionOverwrite` allows you to determine the permissions
+    of an object, whether it be a `versacord.Role` or a `versacord.Member`.
 
     In this case, the `view_channel` permission is being used to hide the channel
     from being viewed by whoever does not meet the criteria, thus creating a
@@ -29,15 +29,15 @@ def create_overwrites(ctx, *objects):
     """
 
     # a dict comprehension is being utilised here to set the same permission overwrites
-    # for each `versa.Role` or `versa.Member`.
-    overwrites = {obj: versa.PermissionOverwrite(view_channel=True) for obj in objects}
+    # for each `versacord.Role` or `versacord.Member`.
+    overwrites = {obj: versacord.PermissionOverwrite(view_channel=True) for obj in objects}
 
     # prevents the default role (@everyone) from viewing the channel
     # if it isn't already allowed to view the channel.
-    overwrites.setdefault(ctx.guild.default_role, versa.PermissionOverwrite(view_channel=False))
+    overwrites.setdefault(ctx.guild.default_role, versacord.PermissionOverwrite(view_channel=False))
 
     # makes sure the client is always allowed to view the channel.
-    overwrites[ctx.guild.me] = versa.PermissionOverwrite(view_channel=True)
+    overwrites[ctx.guild.me] = versacord.PermissionOverwrite(view_channel=True)
 
     return overwrites
 
@@ -46,7 +46,7 @@ def create_overwrites(ctx, *objects):
 # it is best to lock it to be guild-only.
 @secret.command()
 @commands.guild_only()
-async def text(ctx, name: str, *objects: typing.Union[versa.Role, versa.Member]):
+async def text(ctx, name: str, *objects: typing.Union[versacord.Role, versacord.Member]):
     """This makes a text channel with a specified name
     that is only visible to roles or members that are specified.
     """
@@ -63,7 +63,7 @@ async def text(ctx, name: str, *objects: typing.Union[versa.Role, versa.Member])
 
 @secret.command()
 @commands.guild_only()
-async def voice(ctx, name: str, *objects: typing.Union[versa.Role, versa.Member]):
+async def voice(ctx, name: str, *objects: typing.Union[versacord.Role, versacord.Member]):
     """This does the same thing as the `text` subcommand
     but instead creates a voice channel.
     """
@@ -77,7 +77,7 @@ async def voice(ctx, name: str, *objects: typing.Union[versa.Role, versa.Member]
 
 @secret.command()
 @commands.guild_only()
-async def emoji(ctx, emoji: versa.PartialEmoji, *roles: versa.Role):
+async def emoji(ctx, emoji: versacord.PartialEmoji, *roles: versacord.Role):
     """This clones a specified emoji that only specified roles
     are allowed to use.
     """
