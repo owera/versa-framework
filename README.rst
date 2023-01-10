@@ -124,3 +124,6 @@ Links
 - `Documentation <https://docs.versacord.dev/>`_
 - `Official Discord Server <https://discord.gg/Fee6Kptq57>`_
 - `Discord API <https://discord.gg/discord-api>`_
+
+Enjoy!!
+-------
