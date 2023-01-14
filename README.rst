@@ -4,18 +4,18 @@
 .. image:: https://img.shields.io/discord/1021941603042074706?color=blue&label=discord
    :target: https://discord.gg/Fee6Kptq57
    :alt: Discord server invite
-.. image:: https://img.shields.io/pypi/v/versacord-framework.svg
-   :target: https://pypi.org/project/versacord-framework/
+.. image:: https://img.shields.io/pypi/v/versacord
+   :target: https://pypi.org/project/versacord/
    :alt: PyPI version info
-.. image:: https://img.shields.io/pypi/dm/versacord-framework?color=informational&label=pypi%20downloads
-   :target: https://pypi.org/project/versacord-framework/
+.. image:: https://img.shields.io/pypi/dd/versacord?color=informational&label=pypi%20downloads
+   :target: https://pypi.org/project/versacord/
    :alt: PyPI version info
-.. image:: https://img.shields.io/pypi/pyversions/versacord-framework.svg
-   :target: https://pypi.org/project/versacord-framework/
+.. image:: https://img.shields.io/pypi/pyversions/versacord.svg
+   :target: https://pypi.org/project/versacord/
    :alt: PyPI supported Python versions
-.. image:: https://img.shields.io/readthedocs/versacord-framework
-   :target: https://docs.versacord.dev/
-   :alt: versacord Framework documentation
+.. .. image:: https://img.shields.io/readthedocs/versacord
+..    :target: https://docs.versacord.dev/
+..    :alt: versacord Framework documentation
 
 Versacord Framework
 -------------------
